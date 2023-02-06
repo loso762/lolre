@@ -15,7 +15,7 @@ function App() {
   const APIKEY = "RGAPI-5401cc17-af17-4808-bfc6-d3631f3b8b4d"
   const MatchNum = 5;
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <whatSearch.Provider value={{ user,setUser,champ,setChamp,APIKEY,MatchNum,users,setUsers,num,setnum } }>
         <div className="App">
           <Routes>
