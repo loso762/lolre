@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lol/static/css/main.2d9e688e.css",
-    "main.js": "/lol/static/js/main.9cd6a6fa.js",
-    "static/js/787.ed32c67d.chunk.js": "/lol/static/js/787.ed32c67d.chunk.js",
-    "index.html": "/lol/index.html",
-    "main.2d9e688e.css.map": "/lol/static/css/main.2d9e688e.css.map",
-    "main.9cd6a6fa.js.map": "/lol/static/js/main.9cd6a6fa.js.map",
-    "787.ed32c67d.chunk.js.map": "/lol/static/js/787.ed32c67d.chunk.js.map"
+    "main.css": "/lolre/static/css/main.2d9e688e.css",
+    "main.js": "/lolre/static/js/main.2a8a7c06.js",
+    "static/js/787.ed32c67d.chunk.js": "/lolre/static/js/787.ed32c67d.chunk.js",
+    "index.html": "/lolre/index.html",
+    "main.2d9e688e.css.map": "/lolre/static/css/main.2d9e688e.css.map",
+    "main.2a8a7c06.js.map": "/lolre/static/js/main.2a8a7c06.js.map",
+    "787.ed32c67d.chunk.js.map": "/lolre/static/js/787.ed32c67d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2d9e688e.css",
-    "static/js/main.9cd6a6fa.js"
+    "static/js/main.2a8a7c06.js"
   ]
 }
