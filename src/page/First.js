@@ -81,7 +81,7 @@ function First() {
                     </div>)
                 }
             </div>
-            {/* <img src="../img/bg3.png"></img> */}
+            <img src="https://ifh.cc/g/mDZppT.webp"></img>
         </section>
     );
 }
