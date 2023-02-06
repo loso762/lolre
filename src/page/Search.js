@@ -220,7 +220,7 @@ return (
                     <CircularProgressBar percent={tWin / (tWin + tLose) * 100} colorSlice="#5383E8" colorCircle="#E84057" fontSize='1rem' size='130' speed='100' stroke='16' />
                     <div>
                         <p className="recentWL"> {tWin}승 {tLose}패</p>
-                        <p className="recentKD"> {tK/MatchNum} / {tD/MatchNum} / {tAs/MatchNum} </p>
+                        <p className="recentKD"> {(tK/MatchNum).toFixed(1)} / {(tD/MatchNum).toFixed(1)} / {(tAs/MatchNum).toFixed(1)} </p>
                         {
                             tD == 0 ? 
                                 <>

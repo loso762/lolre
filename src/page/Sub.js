@@ -14,7 +14,7 @@ function Sub() {
                 <Route path="/Champ" element={<Champ/>}/>
             </Routes>
             <GoTop />
-            <img className='mainbg' src={'https://ifh.cc/g/mDZppT.webp'} alt=''></img>
+            <img className='mainbg' alt=''></img>
         </div>
     );
 }

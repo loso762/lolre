@@ -9,6 +9,8 @@ header{
     height: 100px;
     z-index: 999;
     opacity: 0.9;
+    transition: opacity 0.5s;
+    transform-origin: top;
 
     .headerCon{
         display: flex;
@@ -280,21 +282,26 @@ $min : 240px;
 @include device($min,$mobile){
     
     header{
-        height: 160px;
+        height: 140px;
         .headerCon{
             flex-wrap: wrap;
             padding: 0 2vw 0 0;
             .menu {
                 width: 100%;
-                height: 90px;
+                height: 60px;
                 padding-top: 10px;
                 .list{
                     padding: 0;
+                    height: 60px;
                     li{
-                        width: 80px;
+                        width: 75px;
                         height: 40px;
                         a{
                             font-size: 14px;
+                        }
+                        &.active{
+                            width: 80px;
+                            height: 44px;
                         }
                     }
                 }
@@ -308,7 +315,6 @@ $min : 240px;
                 position: relative;
                 max-width: initial;
                 padding-right: 10px;
-                transform: translateY(-10px);
                 .searchwrapper{
                     height: 100%;
                     .inputID{

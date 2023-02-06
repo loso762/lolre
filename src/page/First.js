@@ -57,7 +57,7 @@ function First() {
     };
     
     return (
-        <section className="Homesearch" style={{background:"url('../img/bg.webp') center / cover"}}>
+        <section className="Homesearch">
             <div className="wrapper">
                 <h1 data-heading="LOLCORD">LOLCORD</h1>
             </div>
@@ -81,7 +81,6 @@ function First() {
                     </div>)
                 }
             </div>
-            <img src="https://ifh.cc/g/mDZppT.webp"></img>
         </section>
     );
 }

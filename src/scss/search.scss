@@ -1,5 +1,5 @@
 
-$color-bg: rgb(243,243,243);
+$color-bg: rgba(243,243,243);
 $color-shadow: #BABECC;
 $color-white: #FFF;
 $color-red: rgb(240, 125, 141);
@@ -1071,13 +1071,16 @@ $min : 240px;
                 transform: translateY(-15px);
                 div{
                     text-align: center;
-                    width: 34%;
+                    width: 33%;
                     transform: scale(0.9);
                     p{
                         width: 100%;
                         text-align: center;
                         justify-content: center;
                         margin: 15px 0 ;
+                    }
+                    &:nth-child(2){
+                        transform: scale(0.7) translateX(-14px);
                     }
                     .recentWL{
                         font-size: 13px;
@@ -1106,6 +1109,7 @@ $min : 240px;
                     }
                 }
             }
+            
             .likePosition{
                 width: 100%;
                 display:flex;
@@ -1198,8 +1202,9 @@ $min : 240px;
                 flex-direction: column;
                 justify-content: space-between;
                 width: 100%;
-                height: 260px;
+                height: 270px;
                 transition: 1s;
+                padding-top: 10px;
 
                 .RankInfo{
                     width: 99%;
@@ -1218,7 +1223,7 @@ $min : 240px;
                         flex-direction: column;
                         align-items: center;
                         justify-content: space-between;
-                        width: 50%;
+                        width: 40%;
                         z-index: 4;
                         figcaption{
                             font-size: 18px;
@@ -1228,7 +1233,7 @@ $min : 240px;
                         }
                         img{
                             position: relative;
-                            width: 70px;
+                            width: 60px;
                             z-index: 10;
                         }
                     }
@@ -1259,8 +1264,8 @@ $min : 240px;
 
             .likeChamp{
                 width: 100%;
-                height: 420px;
-                padding: 40px 20px;
+                height: 400px;
+                padding: 30px 20px;
                 text-align: center;
                 font-size: 22px;
                 border-radius: 25px;
@@ -1280,12 +1285,13 @@ $min : 240px;
                 li{
                     text-align: left;
                     height: 43px;
-                    margin: 20px 5px;
+                    margin: 16px 5px;
                     display: flex;
                     align-items: center;
                     font-size: 14px;
                     color: rgb(50, 50, 50);
                     position: relative;
+                    z-index: 2;
                     cursor: pointer;
 
                     &:hover{
@@ -1365,7 +1371,7 @@ $min : 240px;
                     border-left: 6px solid rgb(203, 203, 203);
                     bottom: -6px;
                     left: -6px;
-                    z-index: 1;
+                    z-index: 0;
                 }
             }
             
@@ -1468,7 +1474,7 @@ $min : 240px;
                         display: flex;
                         justify-content: space-between;
                         flex-wrap: wrap;
-                        margin-right: 1.5vw;
+                        margin-right:0;
 
                         .mySpell{
                             width: 50%;
@@ -1555,7 +1561,7 @@ $min : 240px;
                             display: flex;
                             justify-content: space-around;
                             align-items: center;
-                            padding: 0 3px;
+                            padding: 0 2px;
                             figure{
                                 margin: 0;
                                 width: 26px;
@@ -1633,7 +1639,7 @@ $min : 240px;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        margin: 0 1vw 0 0;
+                        margin: 0 0.5vw 0 0;
                         .lane{
                             margin: 10px 0;
                         }
@@ -1646,7 +1652,7 @@ $min : 240px;
                         }
                         .champLevel{
                             position: absolute;
-                            bottom: 30px;
+                            bottom: 10px;
                             left:74%;
                             width: 25px;
                             height: 25px;

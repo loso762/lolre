@@ -53,9 +53,18 @@ function TopHead({ num }) {
     menulist.current[num].classList.add("active")
   }, []);
   
+  const TT = useRef();
+    
+  window.addEventListener("scroll", () => {
+      if (window.scrollY <= 30 ) {
+          TT.current.style = "transform:scaleY(1); opacity:1"
+      } else{
+          TT.current.style = "transform:scaleY(0); opacity:0"
+      }
+  })
   
   return (
-    <header>
+    <header ref={TT}>
       <div className="headerCon" onMouseLeave={() => setSlist(false)}>
 
       <nav className="menu">
