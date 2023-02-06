@@ -1,0 +1,393 @@
+.Homesearch {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.Homesearch .wrapper {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+.Homesearch .wrapper h1 {
+  font-size: 12vw;
+  top: 33%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-weight: 900;
+  color: #fbe6d3;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  text-shadow: -1px -1px 0 #3e2e6a, 1px -1px 0 #3e2e6a, -1px 1px 0 #3e2e6a, 1px 1px 0 #3e2e6a;
+}
+.Homesearch .wrapper h1:after {
+  content: attr(data-heading);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+  color: #f07d8d;
+  transform: translate(0.4vw, 0.3vh);
+  mix-blend-mode: darken;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 0px 0px #3e2e6a, 0px 1px 0px #130b52, 2px 1px 0px #3e2e6a, 1px 2px 0px #130b52, 3px 2px 0px #3e2e6a, 2px 3px 0px #130b52, 4px 3px 0px #3e2e6a, 3px 4px 0px #130b52, 5px 4px 0px #3e2e6a, 4px 5px 0px #130b52, 6px 5px 0px #3e2e6a, 5px 6px 0px #130b52, 7px 6px 0px #3e2e6a;
+}
+.Homesearch .searchwrapper {
+  width: 380px;
+  height: 60px;
+  padding: 15px;
+  position: absolute;
+  top: 57%;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: inset 4px 4px 10px #d1d0d0, inset -7px -7px 10px #fbfafa;
+}
+.Homesearch .searchwrapper .inputID {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  background: transparent;
+  font-family: "GmarketSansMedium";
+}
+.Homesearch .searchwrapper .inputIDBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("https://ifh.cc/g/CRjHbH.png");
+  background-size: 20px;
+  opacity: 0.6;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+.Homesearch .searchwrapper input:focus {
+  outline: none;
+}
+.Homesearch .search-inner {
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  transform: translateX(1%) translateY(calc(100% + 3px));
+  z-index: 99;
+}
+.Homesearch .search-inner #search-list {
+  width: 98%;
+  background-color: rgb(238, 237, 237);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 6px 5px 9px 0px #d1d0d0, inset -4px -4px 8px #fbfafa;
+}
+.Homesearch .search-inner #search-list li {
+  font-size: 18px;
+  display: flex;
+  height: 45px;
+  width: 90%;
+  align-items: center;
+  border-radius: 10px;
+  margin: 15px auto;
+  cursor: pointer;
+}
+.Homesearch .search-inner #search-list li span {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  width: 87%;
+  height: 100%;
+  color: rgb(117, 117, 117);
+}
+.Homesearch .search-inner #search-list li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  width: 13%;
+  color: rgb(117, 117, 117);
+}
+.Homesearch .search-inner #search-list li:hover span {
+  color: #AE1100;
+}
+.Homesearch .search-inner #search-list li:hover button {
+  color: #AE1100;
+}
+.Homesearch img {
+  position: absolute;
+  opacity: 0.8;
+}
+.Homesearch img:nth-of-type(1) {
+  width: 34%;
+  top: -108px;
+  left: -4%;
+}
+.Homesearch img:nth-of-type(2) {
+  width: 42%;
+  bottom: -50px;
+  right: -50px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Homesearch {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .Homesearch #title {
+    position: absolute;
+    top: 35%;
+    color: rgba(43, 43, 43, 0.9);
+    font-family: Helvetica, Geneva, sans-serif;
+    font-size: 12vw;
+  }
+  .Homesearch #title span {
+    text-shadow: -0.04em -0.01em 2px rgb(255, 23, 23), 0.05em 0 2px rgb(19, 255, 255);
+    letter-spacing: 0.08em;
+  }
+  .Homesearch .searchwrapper {
+    position: absolute;
+    z-index: 5;
+    top: 52%;
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: inset 8px 8px 16px #d1d0d0, inset -14px -14px 10px #fbfafa;
+  }
+  .Homesearch .searchwrapper .inputID {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    font-family: "GmarketSansMedium";
+    font-weight: 100;
+    border-radius: 15px;
+    background: transparent;
+  }
+  .Homesearch .searchwrapper .inputIDBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-image: url("https://ifh.cc/g/CRjHbH.png");
+    background-size: 20px;
+    opacity: 0.6;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .Homesearch .searchwrapper input:focus {
+    outline: none;
+  }
+  .Homesearch .search-inner {
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    transform: translateX(1%) translateY(calc(100% + 3px));
+    z-index: 99;
+  }
+  .Homesearch .search-inner #search-list {
+    width: 98%;
+    background-color: rgb(238, 237, 237);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 11px 5px 9px 0px #d1d0d0, inset -8px -8px 16px #fbfafa;
+  }
+  .Homesearch .search-inner #search-list li {
+    font-size: 18px;
+    display: flex;
+    height: 45px;
+    width: 90%;
+    align-items: center;
+    border-radius: 10px;
+    margin: 15px auto;
+    cursor: pointer;
+  }
+  .Homesearch .search-inner #search-list li span {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    width: 87%;
+    height: 100%;
+    color: rgb(117, 117, 117);
+  }
+  .Homesearch .search-inner #search-list li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    width: 13%;
+    color: rgb(117, 117, 117);
+  }
+  .Homesearch .search-inner #search-list li:hover span {
+    color: #AE1100;
+  }
+  .Homesearch .search-inner #search-list li:hover button {
+    color: #AE1100;
+  }
+  .Homesearch img {
+    position: absolute;
+    opacity: 0.8;
+  }
+  .Homesearch img:nth-of-type(1) {
+    width: 50%;
+    top: -116px;
+    left: -9%;
+  }
+  .Homesearch img:nth-of-type(2) {
+    width: 50%;
+    bottom: -50px;
+    right: -60px;
+  }
+}
+@media (min-width: 240px) and (max-width: 768px) {
+  .Homesearch {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .Homesearch #title {
+    position: absolute;
+    top: 35%;
+    color: rgba(43, 43, 43, 0.9);
+    font-family: Helvetica, Geneva, sans-serif;
+    font-size: 14vw;
+  }
+  .Homesearch #title span {
+    text-shadow: -0.04em -0.01em 2px rgb(255, 23, 23), 0.05em 0 2px rgb(19, 255, 255);
+    letter-spacing: 0.08em;
+  }
+  .Homesearch .searchwrapper {
+    position: absolute;
+    z-index: 5;
+    top: 52%;
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    height: 45px;
+  }
+  .Homesearch .searchwrapper .inputID {
+    padding: 0px;
+    font-size: 13px;
+    line-height: 45px;
+  }
+  .Homesearch .searchwrapper .inputIDBtn {
+    width: 15%;
+    background-size: 18px;
+    transform: translateX(-5px);
+  }
+  .Homesearch .searchwrapper input:focus {
+    outline: none;
+  }
+  .Homesearch .search-inner {
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    transform: translateX(1%) translateY(calc(100% + 3px));
+    z-index: 99;
+  }
+  .Homesearch .search-inner #search-list {
+    width: 98%;
+    background-color: rgb(238, 237, 237);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 11px 5px 9px 0px #d1d0d0, inset -8px -8px 16px #fbfafa;
+  }
+  .Homesearch .search-inner #search-list li {
+    font-size: 13px;
+    display: flex;
+    height: 30px;
+    width: 90%;
+    align-items: center;
+    border-radius: 10px;
+    margin: 15px auto;
+    cursor: pointer;
+  }
+  .Homesearch .search-inner #search-list li span {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    width: 87%;
+    height: 100%;
+    color: rgb(117, 117, 117);
+  }
+  .Homesearch .search-inner #search-list li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 900;
+    width: 13%;
+    color: rgb(117, 117, 117);
+  }
+  .Homesearch .search-inner #search-list li:hover span {
+    color: #AE1100;
+  }
+  .Homesearch .search-inner #search-list li:hover button {
+    color: #AE1100;
+  }
+  .Homesearch img {
+    position: absolute;
+    opacity: 0.8;
+  }
+  .Homesearch img:nth-of-type(1) {
+    width: calc(200px + 25vw);
+    top: -16vw;
+    left: -9%;
+  }
+  .Homesearch img:nth-of-type(2) {
+    width: calc(200px + 25vw);
+    bottom: -5vw;
+    right: 0;
+  }
+}/*# sourceMappingURL=first.css.map */

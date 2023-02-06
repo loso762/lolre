@@ -1,0 +1,451 @@
+.Ranking {
+  max-width: 1100px;
+  margin: 160px auto 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "OTWelcomeRA";
+  color: rgb(69, 69, 69);
+  background-color: transparent;
+  z-index: 2;
+}
+.Ranking h2 {
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+  font-size: 40px;
+  letter-spacing: 4px;
+  color: #f07d8d;
+}
+.Ranking .leagues {
+  display: flex;
+  justify-content: space-around;
+  font-family: "GmarketSansMedium";
+  margin: 50px 50px 0px;
+}
+.Ranking .leagues li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 11%;
+  cursor: pointer;
+  color: rgb(78, 78, 78);
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: -2px -2px 10px #FFF, 2px 2px 10px #BABECC;
+  background-color: white;
+}
+.Ranking .leagues li:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+.Ranking .leagues li:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.Ranking .leagues li.active {
+  background-color: #f07d8d;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(1) {
+  background-color: #c7c5b5;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(2) {
+  background-color: #de4040;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(3) {
+  background-color: #9240de;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(4) {
+  background-color: #aface8;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(5) {
+  background-color: #89ce9f;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(6) {
+  background-color: goldenrod;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(7) {
+  background-color: silver;
+  color: white;
+}
+.Ranking .leagues li.active:nth-child(8) {
+  background-color: rgb(161, 112, 27);
+  color: white;
+}
+.Ranking .division {
+  display: flex;
+  opacity: 0;
+  transform: scaleY(0);
+  justify-content: center;
+  margin: 40px 50px;
+  font-family: "GmarketSansMedium";
+  transition: 0.5s;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.Ranking .division li {
+  text-align: center;
+  width: 12%;
+  cursor: pointer;
+  margin: 0 20px;
+  background-color: white;
+  color: rgb(138, 138, 138);
+  padding: 8px 0;
+  border-radius: 10px;
+  box-shadow: -2px -2px 10px #FFF, 2px 2px 10px #BABECC;
+}
+.Ranking .division li:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+.Ranking .division li:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.Ranking .division li.active {
+  color: #ed304a;
+}
+.Ranking .division.active {
+  display: flex;
+  opacity: 1;
+  transform: scaleY(1);
+}
+.Ranking .rankers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto 50px;
+  color: rgb(48, 48, 48);
+  background-color: rgba(243, 244, 243, 0.8);
+  text-shadow: 1px 1px 0 #FFF;
+  box-shadow: -5px -5px 15px #FFF, 5px 5px 20px #BABECC;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.Ranking .rankers li {
+  width: 95%;
+  height: 50px;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin: 5px 0;
+  box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+  background-color: #FFF;
+}
+.Ranking .rankers li p {
+  display: block;
+  text-align: center;
+}
+.Ranking .rankers li:nth-child(1) {
+  border: none;
+  box-shadow: none;
+}
+.Ranking .rankers li:nth-child(1):hover {
+  box-shadow: none;
+}
+.Ranking .rankers li:nth-child(2) .rank, .Ranking .rankers li:nth-child(3) .rank, .Ranking .rankers li:nth-child(4) .rank {
+  color: black;
+  background: url("https://ifh.cc/g/lnhNBV.png") no-repeat;
+  background-size: 120px;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Ranking .rankers li:nth-child(2) .rank {
+  background-position: -6.5px -33px;
+}
+.Ranking .rankers li:nth-child(2) .rankerName {
+  color: rgb(221, 158, 0);
+}
+.Ranking .rankers li:nth-child(3) .rank {
+  background-position: -45.5px -33px;
+}
+.Ranking .rankers li:nth-child(3) .rankerName {
+  color: rgb(164, 164, 164);
+}
+.Ranking .rankers li:nth-child(4) .rank {
+  background-position: -83px -33px;
+}
+.Ranking .rankers li:nth-child(4) .rankerName {
+  color: rgb(149, 82, 82);
+}
+.Ranking .rankers li .rank {
+  width: 30px;
+  margin: 0 35px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+}
+.Ranking .rankers li .rankerName {
+  width: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+.Ranking .rankers li .rankerName:hover {
+  font-size: 17px;
+  color: rgb(240, 125, 141);
+}
+.Ranking .rankers li .LP {
+  width: 13%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+.Ranking .rankers li .winlose {
+  display: flex;
+  width: 15%;
+  min-width: 120px;
+  color: #fafaf6;
+  height: 25px;
+  border-radius: 7px;
+  overflow: hidden;
+  text-shadow: none;
+}
+.Ranking .rankers li .winlose .win {
+  text-align: left;
+  line-height: 26px;
+  padding-left: 10px;
+  background-color: #5383E8;
+}
+.Ranking .rankers li .winlose .lose {
+  text-align: right;
+  line-height: 26px;
+  padding-right: 10px;
+  background-color: #E84057;
+}
+.Ranking .rankers li .Odds {
+  width: 12%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+.Ranking .rankers li:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+.Ranking .rankers li:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.Ranking .rankers .topItem {
+  width: 95%;
+  height: 50px;
+  margin: 10px auto;
+  padding: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+}
+.Ranking .rankers .topItem p {
+  text-align: center;
+}
+.Ranking .rankers .topItem p:nth-child(1) {
+  width: 12%;
+}
+.Ranking .rankers .topItem p:nth-child(2) {
+  width: 50%;
+  text-align: left;
+}
+.Ranking .rankers .topItem p:nth-child(3) {
+  width: 13%;
+}
+.Ranking .rankers .topItem p:nth-child(4) {
+  width: 15%;
+}
+.Ranking .rankers .topItem p:nth-child(5) {
+  width: 12%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Ranking .leagues {
+    margin: 40px 4vw 0px;
+  }
+  .Ranking .leagues li {
+    font-size: 14px;
+    word-break: keep-all;
+    padding: 8px 0;
+  }
+}
+@media (min-width: 240px) and (max-width: 768px) {
+  .Ranking {
+    margin-top: 190px;
+  }
+  .Ranking .leagues {
+    flex-wrap: wrap;
+    margin: 0px 4vw 0px;
+  }
+  .Ranking .leagues li {
+    width: 23%;
+    margin: 10px 1%;
+    font-size: 14px;
+    word-break: keep-all;
+    padding: 8px 0;
+  }
+  .Ranking .division {
+    margin: 20px 0;
+    padding: 0 3vw;
+    height: 55px;
+  }
+  .Ranking .division li {
+    width: 19%;
+    height: 35px;
+    margin: 0 3vw;
+  }
+  .Ranking .rankers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto 50px;
+    color: rgb(48, 48, 48);
+    background-color: #eeeff3;
+    text-shadow: 1px 1px 0 #FFF;
+    box-shadow: -5px -5px 15px #FFF, 5px 5px 20px #BABECC;
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+  .Ranking .rankers li {
+    width: 95%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin: 5px 0;
+    box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.2);
+    transition: 1s;
+    background-color: #FFF;
+    font-size: 13px;
+  }
+  .Ranking .rankers li p {
+    display: block;
+    text-align: center;
+  }
+  .Ranking .rankers li:nth-child(1) {
+    border: none;
+    box-shadow: none;
+    background-color: #eeeff3;
+  }
+  .Ranking .rankers li:nth-child(2) .rank, .Ranking .rankers li:nth-child(3) .rank, .Ranking .rankers li:nth-child(4) .rank {
+    color: black;
+    background: url("https://ifh.cc/g/lnhNBV.png") no-repeat;
+    background-size: 83px;
+    height: 25px;
+    width: 30px;
+    padding: 0 8px;
+    margin: 0;
+    margin-left: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Ranking .rankers li:nth-child(2) .rank {
+    background-position: -1px -19px;
+  }
+  .Ranking .rankers li:nth-child(3) .rank {
+    background-position: -27.5px -19px;
+  }
+  .Ranking .rankers li:nth-child(4) .rank {
+    background-position: -53.5px -19px;
+  }
+  .Ranking .rankers li .rank {
+    width: 30px;
+    padding: 0 8px;
+    margin: 0;
+    margin-left: 1vw;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+  }
+  .Ranking .rankers li .rankerName {
+    text-align: left;
+    font-size: 13px;
+    margin-left: 2vw;
+  }
+  .Ranking .rankers li .rankerName:hover {
+    font-size: 15px;
+    color: #f07d8d;
+  }
+  .Ranking .rankers li .LP {
+    width: 13%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+  }
+  .Ranking .rankers li .winlose {
+    min-width: 100px;
+    margin: 0 10px;
+  }
+  .Ranking .rankers li .winlose .win {
+    padding-left: 5px;
+  }
+  .Ranking .rankers li .winlose .lose {
+    padding-right: 5px;
+  }
+  .Ranking .rankers li .Odds {
+    padding-right: 10px;
+  }
+  .Ranking .rankers li:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+  }
+  .Ranking .rankers li:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  }
+  .Ranking .rankers .topItem {
+    width: 95%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px 0 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .Ranking .rankers .topItem p:nth-child(1) {
+    width: 33px;
+    padding: 0;
+    margin: 0;
+    margin-left: 1vw;
+  }
+  .Ranking .rankers .topItem p:nth-child(2) {
+    width: 50%;
+    text-align: left;
+    margin-left: 2vw;
+  }
+  .Ranking .rankers .topItem p:nth-child(3) {
+    width: 13%;
+  }
+  .Ranking .rankers .topItem p:nth-child(4) {
+    width: 15%;
+    min-width: 100px;
+    margin: 0 10px;
+  }
+  .Ranking .rankers .topItem p:nth-child(5) {
+    width: 14%;
+    padding-right: 5px;
+  }
+}/*# sourceMappingURL=rank.css.map */

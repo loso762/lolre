@@ -1,0 +1,475 @@
+[
+  {
+    "id": 8000,
+    "key": "Precision",
+    "name": "정밀",
+    "shortDesc": "공격 강화 및 지속적 피해 강화"
+  },
+  {
+    "id": 8100,
+    "key": "Domination",
+    "name": "지배",
+    "shortDesc": "강력한 피해와 빠른 접근 강화"
+  },
+  {
+    "id": 8200,
+    "key": "Sorcery",
+    "name": "마법",
+    "shortDesc": "스킬 및 광역 효과 강화"
+  },
+  {
+    "id": 8300,
+    "key": "Inspiration",
+    "name": "영감",
+    "shortDesc": "다양한 방식의 전투 보조 능력 강화"
+  },
+  {
+    "id": 8400,
+    "key": "Resolve",
+    "name": "결의",
+    "shortDesc": "내구력 및 군중 제어 능력 강화"
+  },
+  {
+    "id": 8112,
+    "key": "Electrocute",
+    "icon": "perk-images/Styles/Domination/Electrocute/Electrocute.png",
+    "name": "감전",
+    "shortDesc": "3초 동안 같은 챔피언에게 기본 공격 또는 개별</b> 스킬 3회를 적중시키면 추가 적응형 피해 적용"
+  },
+  {
+    "id": 8124,
+    "key": "Predator",
+    "icon": "perk-images/Styles/Domination/Predator/Predator.png",
+    "name": "포식자",
+    "shortDesc": "장화에 사용 효과 추가. 사용 시 일시적으로 이동 속도가 대폭 증가하며 다음 공격 또는 스킬 사용 시 추가 적응형 피해"
+  },
+  {
+    "id": 8128,
+    "key": "DarkHarvest",
+    "icon": "perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png",
+    "name": "어둠의 수확",
+    "shortDesc": "체력이 낮은 챔피언에게 피해를 입히면 적응형 피해를 입히고 해당 챔피언의 영혼을 수확"
+  },
+  {
+    "id": 9923,
+    "key": "HailOfBlades",
+    "icon": "perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png",
+    "name": "칼날비",
+    "shortDesc": "적 챔피언에 대한 첫 공격 3회 동안 공격 속도 대폭 증가"
+  },
+  {
+    "id": 8126,
+    "key": "CheapShot",
+    "icon": "perk-images/Styles/Domination/CheapShot/CheapShot.png",
+    "name": "비열한 한 방",
+    "shortDesc": "<lol-uikit-tooltipped-keyword key='LinkTooltip_Description_ImpairAct'>이동 또는 행동이 제약된 적 챔피언에게 추가 고정 피해 "
+  },
+  {
+    "id": 8139,
+    "key": "TasteOfBlood",
+    "icon": "perk-images/Styles/Domination/TasteOfBlood/GreenTerror_TasteOfBlood.png",
+    "name": "피의 맛",
+    "shortDesc": "적 챔피언에게 피해를 입히면 체력을 회복합니다."
+  },
+  {
+    "id": 8143,
+    "key": "SuddenImpact",
+    "icon": "perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png",
+    "name": "돌발 일격",
+    "shortDesc": "돌진, 도약, 점멸, 순간이동을 사용하거나 은신에서 빠져나오면 물리 관통력 및 마법 관통력 급증"
+  },
+  {
+    "id": 8136,
+    "key": "ZombieWard",
+    "icon": "perk-images/Styles/Domination/ZombieWard/ZombieWard.png",
+    "name": "좀비 와드",
+    "shortDesc": "적 와드 파괴 관여 시 그 자리에 아군 좀비 와드 생성. 생성된 좀비 와드 하나당 적응형으로 공격력 또는 주문력 영구 증가 및 최대 개수 도달 시 추가로 증가"
+  },
+  {
+    "id": 8120,
+    "key": "GhostPoro",
+    "icon": "perk-images/Styles/Domination/GhostPoro/GhostPoro.png",
+    "name": "유령 포로",
+    "shortDesc": "자신이 설치한 와드의 지속시간이 끝나면 유령 포로 와드가 남아 발견될 때까지 시야를 밝히고, 생성된 유령 포로 와드 하나당 적응형으로 공격력 또는 주문력 영구 증가 및 유령 포로 와드가 적 챔피언 발견 시 추가로 증가"
+  },
+  {
+    "id": 8138,
+    "key": "EyeballCollection",
+    "icon": "perk-images/Styles/Domination/EyeballCollection/EyeballCollection.png",
+    "name": "사냥의 증표",
+    "shortDesc": "챔피언 처치 관여 시마다 증표 획득. 개당 적응형으로 공격력 또는 주문력 영구 증가 및 최대 개수 도달 시 추가 증가"
+  },
+  {
+    "id": 8135,
+    "key": "TreasureHunter",
+    "icon": "perk-images/Styles/Domination/TreasureHunter/TreasureHunter.png",
+    "name": "보물 사냥꾼",
+    "shortDesc": "고유</b> 처치 관여 시 처음으로 획득하는 골드량 증가 "
+  },
+  {
+    "id": 8134,
+    "key": "IngeniousHunter",
+    "icon": "perk-images/Styles/Domination/IngeniousHunter/IngeniousHunter.png",
+    "name": "영리한 사냥꾼",
+    "shortDesc": "적 챔피언당 1회</b> 한정 처치 관여 시 영구적으로 아이템 가속 증가 (장신구 포함)"
+  },
+  {
+    "id": 8105,
+    "key": "RelentlessHunter",
+    "icon": "perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png",
+    "name": "끈질긴 사냥꾼",
+    "shortDesc": "적 챔피언당 1회</b> 한정 처치 관여 시 전투에서 벗어나 있을 때 이동 속도</b> 영구 증가 "
+  },
+  {
+    "id": 8106,
+    "key": "UltimateHunter",
+    "icon": "perk-images/Styles/Domination/UltimateHunter/UltimateHunter.png",
+    "name": "궁극의 사냥꾼",
+    "shortDesc": "적 챔피언당 1회</b> 한정 처치 관여 시 궁극기 재사용 대기시간 영구 감소 "
+  },
+  {
+    "id": 8351,
+    "key": "GlacialAugment",
+    "icon": "perk-images/Styles/Inspiration/GlacialAugment/GlacialAugment.png",
+    "name": "빙결 강화",
+    "shortDesc": "적 챔피언을 이동 불가 상태로 만들면 3줄기의 빙결 광선이 뻗어 나와 근처 적들을 둔화하고 아군에게 입히는 피해를 감소시킵니다."
+  },
+  {
+    "id": 8360,
+    "key": "UnsealedSpellbook",
+    "icon": "perk-images/Styles/Inspiration/UnsealedSpellbook/UnsealedSpellbook.png",
+    "name": "봉인 풀린 주문서",
+    "shortDesc": "전투에서 벗어났을 때 소환사 주문 교환 가능. 새로운 소환사 주문으로 교환할 때마다 교환 재사용 대기시간 감소."
+  },
+  {
+    "id": 8369,
+    "key": "FirstStrike",
+    "icon": "perk-images/Styles/Inspiration/FirstStrike/FirstStrike.png",
+    "name": "선제공격",
+    "shortDesc": "적 챔피언과 전투 개시 시 3초 동안 9%의 추가 피해 및 입힌 피해에 따라 골드 획득"
+  },
+  {
+    "id": 8306,
+    "key": "HextechFlashtraption",
+    "icon": "perk-images/Styles/Inspiration/HextechFlashtraption/HextechFlashtraption.png",
+    "name": "마법공학 점멸기",
+    "shortDesc": "점멸이 재사용 대기 중일 때 마법공학 점멸로 대체됨마법공학 점멸: 정신 집중 후 다른 지점으로 순간적으로 이동"
+  },
+  {
+    "id": 8304,
+    "key": "MagicalFootwear",
+    "icon": "perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png",
+    "name": "마법의 신발",
+    "shortDesc": "게임 시작 후 12분에 장화 무료 획득. 그 전까지 신발류 아이템 구매 불가. 챔피언 처치 관여 시마다 장화 획득 시점이 45초 앞당겨짐"
+  },
+  {
+    "id": 8313,
+    "key": "PerfectTiming",
+    "icon": "perk-images/Styles/Inspiration/PerfectTiming/PerfectTiming.png",
+    "name": "완벽한 타이밍",
+    "shortDesc": "초시계 키트 획득. 14분 후부터 경직 효과 1회 사용 가능 처치 관여 시마다 사용 가능 시점 120초씩 단축"
+  },
+  {
+    "id": 8321,
+    "key": "FuturesMarket",
+    "icon": "perk-images/Styles/Inspiration/FuturesMarket/FuturesMarket.png",
+    "name": "외상",
+    "shortDesc": "아이템 외상 구매 가능",
+    "longDesc": "외상으로 아이템을 구입할 수 있습니다. 외상 한도는 점차 증가합니다.외상 비용: 50골드"
+  },
+  {
+    "id": 8316,
+    "key": "MinionDematerializer",
+    "icon": "perk-images/Styles/Inspiration/MinionDematerializer/MinionDematerializer.png",
+    "name": "미니언 해체분석기",
+    "shortDesc": "미니언 해체분석기 3개를 보유하고 게임 시작. 해당 아이템으로 미니언 처치 시 동일한 종류의 미니언에게 추가 피해 적용"
+  },
+  {
+    "id": 8345,
+    "key": "BiscuitDelivery",
+    "icon": "perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png",
+    "name": "비스킷 배달",
+    "shortDesc": "게임 시작 후 6분까지 2분마다 비스킷 1개 획득. 비스킷 사용 또는 판매 시 체력/마나 회복 및 최대 마나 영구 증가"
+  },
+  {
+    "id": 8347,
+    "key": "CosmicInsight",
+    "icon": "perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png",
+    "name": "우주적 통찰력",
+    "shortDesc": "소환사 주문 가속 +18아이템 가속 +10"
+  },
+  {
+    "id": 8410,
+    "key": "ApproachVelocity",
+    "icon": "perk-images/Styles/Resolve/ApproachVelocity/ApproachVelocity.png",
+    "name": "쾌속 접근",
+    "shortDesc": "이동을 방해받은 근처 적 챔피언에게 이동할 때 이동 속도 증가. 자신이 이동 방해 스킬을 맞힌 적에게 이동할 때는 추가 증가"
+  },
+  {
+    "id": 8352,
+    "key": "TimeWarpTonic",
+    "icon": "perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png",
+    "name": "시간 왜곡 물약",
+    "shortDesc": "물약이나 비스킷으로 회복량 일부를 즉시 회복. 물약이나 비스킷의 효과가 지속되는 동안 이동 속도 증가"
+  },
+  {
+    "id": 8005,
+    "key": "PressTheAttack",
+    "icon": "perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png",
+    "name": "집중 공격",
+    "shortDesc": "적 챔피언을 연속 3회 기본 공격하면 적의 약점이 노출되며 추가 피해를 줌. 약점이 노출된 적은 6초 동안 모든 상대에게서 추가 피해를 받음"
+  },
+  {
+    "id": 8008,
+    "key": "LethalTempo",
+    "icon": "perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png",
+    "name": "치명적 속도",
+    "shortDesc": "적 챔피언 기본 공격 시 공격 속도 상승(최대 6회 중첩). 최대 중첩 시 공격 사거리 상승 및 최고 공격 속도 제한 해제"
+  },
+  {
+    "id": 8021,
+    "key": "FleetFootwork",
+    "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png",
+    "name": "기민한 발놀림",
+    "shortDesc": "공격 및 이동 시 충전. 충전 중첩 100회 상태로 공격 시 체력 회복 및 이동 속도 증가"
+  },
+  {
+    "id": 8010,
+    "key": "Conqueror",
+    "icon": "perk-images/Styles/Precision/Conqueror/Conqueror.png",
+    "name": "정복자",
+    "shortDesc": "적 챔피언 공격 시 적응형 능력치 중첩 획득. 12회 중첩 시 챔피언 대상 피해량의 일부만큼 체력 회복"
+  },
+  {
+    "id": 9101,
+    "key": "Overheal",
+    "icon": "perk-images/Styles/Precision/Overheal.png",
+    "name": "과다치유",
+    "shortDesc": "자신의 체력을 초과한 체력 회복 효과가 보호막으로 전환"
+  },
+  {
+    "id": 9111,
+    "key": "Triumph",
+    "icon": "perk-images/Styles/Precision/Triumph.png",
+    "name": "승전보",
+    "shortDesc": "챔피언 처치 관여 시 잃은 체력의 10%를 회복하며 추가로 20골드 획득 "
+  },
+  {
+    "id": 8009,
+    "key": "PresenceOfMind",
+    "icon": "perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png",
+    "name": "침착",
+    "shortDesc": "적 챔피언에게 피해를 입히면 마나 또는 기력 재생량 증가. 처치 관여 시 마나 또는 기력 회복"
+  },
+  {
+    "id": 9104,
+    "key": "LegendAlacrity",
+    "icon": "perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png",
+    "name": "전설: 민첩함",
+    "shortDesc": "적 챔피언 처치 관여 시 영구적으로 공격 속도</b> 증가 "
+  },
+  {
+    "id": 9105,
+    "key": "LegendTenacity",
+    "icon": "perk-images/Styles/Precision/LegendTenacity/LegendTenacity.png",
+    "name": "전설: 강인함",
+    "shortDesc": "적 챔피언 처치 관여 시 영구적으로 강인함</b> 효과 획득 "
+  },
+  {
+    "id": 9103,
+    "key": "LegendBloodline",
+    "icon": "perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png",
+    "name": "전설: 핏빛 길",
+    "shortDesc": "적 챔피언 처치 관여 시 영구적으로 생명력 흡수</b> 효과 획득. (최대치 있음) 최대치 도달 시 최대 체력 증가. 다른 전설 룬에 비해 게임 초반에 약하고 후반에 강한 룬"
+  },
+  {
+    "id": 8014,
+    "key": "CoupDeGrace",
+    "icon": "perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png",
+    "name": "최후의 일격",
+    "shortDesc": "체력이 낮은 적 챔피언에게 입히는 피해량 증가",
+    "longDesc": "체력이 40% 이하인 적 챔피언에게 주는 피해량이 8% 증가합니다."
+  },
+  {
+    "id": 8017,
+    "key": "CutDown",
+    "icon": "perk-images/Styles/Precision/CutDown/CutDown.png",
+    "name": "체력차 극복",
+    "shortDesc": "적 최대 체력이 더 많을 경우 해당 챔피언에게 추가 피해"
+  },
+  {
+    "id": 8299,
+    "key": "LastStand",
+    "icon": "perk-images/Styles/Sorcery/LastStand/LastStand.png",
+    "name": "최후의 저항",
+    "shortDesc": "체력이 낮을 때 적 챔피언 공격 시 추가 피해"
+  },
+  {
+    "id": 8437,
+    "key": "GraspOfTheUndying",
+    "icon": "perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png",
+    "name": "착취의 손아귀",
+    "shortDesc": "4초마다 적 챔피언 기본 공격 시 추가 마법 피해, 체력 회복, 체력 영구 증가"
+  },
+  {
+    "id": 8439,
+    "key": "Aftershock",
+    "icon": "perk-images/Styles/Resolve/VeteranAftershock/VeteranAftershock.png",
+    "name": "여진",
+    "shortDesc": "적 챔피언을 이동 불가 상태로 만들면 방어력/마법 저항력 증가 및 잠시 후 주변에 큰 마법 피해"
+},
+  {
+    "id": 8465,
+    "key": "Guardian",
+    "icon": "perk-images/Styles/Resolve/Guardian/Guardian.png",
+    "name": "수호자",
+    "shortDesc": "스킬 대상으로 지정한 아군이나 근처에 있는 아군을 보호. 자신 또는 보호받는 아군이 레벨에 비례하여 피해를 입으면 둘 다 보호막 획득."
+  },
+  {
+    "id": 8446,
+    "key": "Demolish",
+    "icon": "perk-images/Styles/Resolve/Demolish/Demolish.png",
+    "name": "철거",
+    "shortDesc": "포탑 근처에서 포탑에 대한 강력한 공격을 충전"
+  },
+  {
+    "id": 8463,
+    "key": "FontOfLife",
+    "icon": "perk-images/Styles/Resolve/FontOfLife/FontOfLife.png",
+    "name": "생명의 샘",
+    "shortDesc": "적 챔피언 이동 방해 시 표식을 남겨, 아군이 해당 적 공격 시 체력 회복 "
+  },
+  {
+    "id": 8401,
+    "key": "ShieldBash",
+    "icon": "perk-images/Styles/Resolve/MirrorShell/MirrorShell.png",
+    "name": "보호막 강타",
+    "shortDesc": "보호막을 얻으면 적 챔피언에게 다음 기본 공격 시 추가 <font color='#48C4B7'>적응형</font> 피해"
+  },
+  {
+    "id": 8429,
+    "key": "Conditioning",
+    "icon": "perk-images/Styles/Resolve/Conditioning/Conditioning.png",
+    "name": "사전 준비",
+    "shortDesc": "12분 후 방어력 +8 및 마법 저항력 +8 증가와 동시에 추가 방어력 및 마법 저항력 3% 증가"
+  },
+  {
+    "id": 8444,
+    "key": "SecondWind",
+    "icon": "perk-images/Styles/Resolve/SecondWind/SecondWind.png",
+    "name": "재생의 바람",
+    "shortDesc": "적 챔피언에게 피해를 입으면 일정 시간에 걸쳐 잃은 체력의 일부 회복 "
+  },
+  {
+    "id": 8473,
+    "key": "BonePlating",
+    "icon": "perk-images/Styles/Resolve/BonePlating/BonePlating.png",
+    "name": "뼈 방패",
+    "shortDesc": "적 챔피언으로부터 피해를 입은 뒤 해당 적이 가하는 3회의 스킬 및 기본 공격으로부터 30~60만큼 피해를 덜 받습니다.지속시간: 1.5초재사용 대기시간: 55초"
+  },
+  {
+    "id": 8451,
+    "key": "Overgrowth",
+    "icon": "perk-images/Styles/Resolve/Overgrowth/Overgrowth.png",
+    "name": "과잉성장",
+    "shortDesc": "근처에서 몬스터 또는 미니언이 죽을 때마다 최대 체력 영구 증가"
+  },
+  {
+    "id": 8453,
+    "key": "Revitalize",
+    "icon": "perk-images/Styles/Resolve/Revitalize/Revitalize.png",
+    "name": "소생",
+    "shortDesc": "보호막 및 체력 회복 5% 증가체력이 40% 이하인 대상에게는 자신이 사용하거나 받는 회복과 보호막 효과가 10% 강화"
+  },
+  {
+    "id": 8242,
+    "key": "Unflinching",
+    "icon": "perk-images/Styles/Sorcery/Unflinching/Unflinching.png",
+    "name": "불굴의 의지",
+    "shortDesc": "잃은 체력에 비례하여 상승하는 강인함 효과 소폭 증가 "
+  },
+  {
+    "id": 8214,
+    "key": "SummonAery",
+    "icon": "perk-images/Styles/Sorcery/SummonAery/SummonAery.png",
+    "name": "콩콩이 소환",
+    "shortDesc": "공격 또는 스킬 사용 시 대상에 콩콩이를 보내 적에게 피해를 주거나 아군에게 보호막 생성"
+  },
+  {
+    "id": 8229,
+    "key": "ArcaneComet",
+    "icon": "perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png",
+    "name": "신비로운 유성",
+    "shortDesc": "챔피언에게 스킬로 피해를 주면 해당 위치에 피해를 가하는 유성 소환"
+  },
+  {
+    "id": 8230,
+    "key": "PhaseRush",
+    "icon": "perk-images/Styles/Sorcery/PhaseRush/PhaseRush.png",
+    "name": "난입",
+    "shortDesc": "한 챔피언에게 기본 공격 또는 개별 스킬 3회 적중 시 일시적으로 이동 속도 증가 "
+  },
+  {
+    "id": 8224,
+    "key": "NullifyingOrb",
+    "icon": "perk-images/Styles/Sorcery/NullifyingOrb/Pokeshield.png",
+    "name": "무효화 구체",
+    "shortDesc": "마법 피해를 받아 체력이 낮아지면 마법 피해를 흡수하는 보호막 생성"
+  },
+  {
+    "id": 8226,
+    "key": "ManaflowBand",
+    "icon": "perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png",
+    "name": "마나순환 팔찌",
+    "shortDesc": "적 챔피언에게 스킬을 적중하면 최대 마나가 영구적으로 25만큼 증가합니다. (최대 마나량: 250)최대 마나량 250에 도달하면 5초마다 잃은 마나의 1%를 회복합니다."
+  },
+  {
+    "id": 8275,
+    "key": "NimbusCloak",
+    "icon": "perk-images/Styles/Sorcery/NimbusCloak/6361.png",
+    "name": "빛의 망토",
+    "shortDesc": "소환사 주문 사용 후 잠시 동안 이동 속도 증가 및 유닛 통과 가능"
+  },
+  {
+    "id": 8210,
+    "key": "Transcendence",
+    "icon": "perk-images/Styles/Sorcery/Transcendence/Transcendence.png",
+    "name": "깨달음",
+    "shortDesc": "다음 레벨이 되면 추가 효과 획득:5레벨: 스킬 가속 +5 8레벨: 스킬 가속 +5 11레벨: 챔피언 처치 관여 시 기본 스킬의 남은 재사용 대기시간 20% 감소"
+  },
+  {
+    "id": 8234,
+    "key": "Celerity",
+    "icon": "perk-images/Styles/Sorcery/Celerity/CelerityTemp.png",
+    "name": "기민함",
+    "shortDesc": "모든 추가 이동 속도 효과가 7% 증가하고 이동 속도 1% 증가"
+  },
+  {
+    "id": 8233,
+    "key": "AbsoluteFocus",
+    "icon": "perk-images/Styles/Sorcery/AbsoluteFocus/AbsoluteFocus.png",
+    "name": "절대 집중",
+    "shortDesc": "체력이 70% 이상일 경우 적응형 피해 추가 적용"
+  },
+  {
+    "id": 8237,
+    "key": "Scorch",
+    "icon": "perk-images/Styles/Sorcery/Scorch/Scorch.png",
+    "name": "주문 작열",
+    "shortDesc": "10초마다 공격 스킬 적중 시 챔피언을 불태움"
+  },
+  {
+    "id": 8232,
+    "key": "Waterwalking",
+    "icon": "perk-images/Styles/Sorcery/Waterwalking/Waterwalking.png",
+    "name": "물 위를 걷는 자",
+    "shortDesc": "강에 있을 때 이동 속도를 얻고 적응형으로 주문력 또는 공격력 증가"
+  },
+  {
+    "id": 8236,
+    "key": "GatheringStorm",
+    "icon": "perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png",
+    "name": "폭풍의 결집",
+    "shortDesc": "게임이 진행됨에 따라 적응형 공격력 또는 주문력 획득량 증가"
+}
+]

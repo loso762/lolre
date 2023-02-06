@@ -1,0 +1,293 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 999;
+  opacity: 0.9;
+}
+header .headerCon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  border-radius: 50px;
+  height: 100%;
+}
+header .headerCon .menu {
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateY(2px);
+}
+header .headerCon .menu .list {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 5px;
+  opacity: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transition: 0.2s ease-out;
+}
+header .headerCon .menu .list li {
+  width: 105px;
+  height: 45px;
+  color: rgb(97, 103, 124);
+  background-color: rgb(238, 239, 243);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+  margin: 0 auto;
+  cursor: pointer;
+}
+header .headerCon .menu .list li:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+header .headerCon .menu .list li:active, header .headerCon .menu .list li.active {
+  box-shadow: inset 1px 1px 2px 2px #BABECC;
+  background-color: rgb(254, 254, 254);
+}
+header .headerCon .menu .list li:active a, header .headerCon .menu .list li.active a {
+  color: rgb(240, 125, 141);
+  font-weight: 700;
+}
+header .headerCon .menu .list li a {
+  width: 100%;
+  height: 100%;
+  color: #4f4f4f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 18px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+header .headerCon .menu .list li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: #8b8b8b;
+  bottom: 10px;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+header .headerCon .search {
+  max-width: 30%;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .headerCon .search .searchwrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  height: 50px;
+  border: 1px solid #fff;
+  background-color: #f8f8f3;
+  border-radius: 15px;
+  z-index: 99;
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+header .headerCon .search .searchwrapper::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 2%;
+  left: 1%;
+  display: flex;
+  width: 98%;
+  height: 96%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: inset 10px 10px 15px -10px #c3c3c3, inset -10px -10px 15px -10px #ffffff;
+}
+header .headerCon .search .searchwrapper .inputID {
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  padding: 0 20px;
+  font-size: 15px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 15px 0 0 15px;
+}
+header .headerCon .search .searchwrapper .inputIDBtn {
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  background-image: url("https://ifh.cc/g/CRjHbH.png");
+  background-size: 20px;
+  opacity: 0.6;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .headerCon .search .searchwrapper input:focus {
+  outline: none;
+}
+header .headerCon .search .searchwrapper .search-inner {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  transform: translateX(1%) translateY(101%);
+}
+header .headerCon .search .searchwrapper .search-inner #search-list {
+  width: 98%;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgb(108, 108, 108);
+}
+header .headerCon .search .searchwrapper .search-inner #search-list li {
+  font-size: 14px;
+  display: flex;
+  font-family: "Nanum Gothic Coding";
+  height: 50px;
+  cursor: pointer;
+}
+header .headerCon .search .searchwrapper .search-inner #search-list li span {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  width: 88%;
+  height: 100%;
+  padding: 20px 26px;
+  color: rgb(117, 117, 117);
+}
+header .headerCon .search .searchwrapper .search-inner #search-list li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  width: 12%;
+  color: rgb(117, 117, 117);
+}
+
+.Top {
+  border-radius: 100%;
+  display: flex;
+  width: 45px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  background-color: #eeeff3;
+  box-shadow: -2px -2px 10px #FFF, 3px 3px 12px #BABECC;
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  font-size: 1rem;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.Top svg {
+  transform: scale(0.5);
+}
+.Top .active {
+  display: flex;
+}
+.Top:hover {
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 2px 2px 5px #BABECC;
+}
+.Top:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  header .headerCon .menu {
+    width: 70%;
+  }
+  header .headerCon .search .searchwrapper .inputID {
+    width: 81%;
+    padding: 0 1.5vw;
+  }
+  header .headerCon .search .searchwrapper .inputIDBtn {
+    width: 19%;
+    padding: 0 2vw;
+  }
+  .Top {
+    bottom: 50px;
+    right: 30px;
+  }
+}
+@media (min-width: 240px) and (max-width: 768px) {
+  header {
+    height: 160px;
+  }
+  header .headerCon {
+    flex-wrap: wrap;
+    padding: 0 2vw 0 0;
+  }
+  header .headerCon .menu {
+    width: 100%;
+    height: 90px;
+    padding-top: 10px;
+  }
+  header .headerCon .menu .list {
+    padding: 0;
+  }
+  header .headerCon .menu .list li {
+    width: 80px;
+    height: 40px;
+  }
+  header .headerCon .menu .list li a {
+    font-size: 14px;
+  }
+  header .headerCon .search {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: initial;
+    padding-right: 10px;
+    transform: translateY(-10px);
+  }
+  header .headerCon .search .searchwrapper {
+    height: 100%;
+  }
+  header .headerCon .search .searchwrapper .inputID {
+    font-size: 14px;
+    width: 83%;
+    height: 100%;
+    padding: 0 3.5vw;
+  }
+  header .headerCon .search .searchwrapper .inputIDBtn {
+    width: 19%;
+    height: 100%;
+    padding: 0 2vw;
+    background-size: 18px;
+  }
+  .Top {
+    bottom: 25px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .Top svg {
+    transform: scale(0.5) translateX(-5px);
+  }
+}/*# sourceMappingURL=header.css.map */

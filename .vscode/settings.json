@@ -1,0 +1,7 @@
+{
+  "liveSassCompile.settings.includeItems": [
+  ],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}
