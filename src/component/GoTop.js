@@ -1,17 +1,23 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 function GoTop() {
 
     const TT = useRef();
-    
-    window.addEventListener("scroll", () => {
-        if (window.scrollY == 0 ) {
-            TT.current.style = "opacity:0"
-        } else{
-            TT.current.style = "opacity:1"
+    useEffect(() => {
+        window.addEventListener("scroll", GoTopon);
+        return () => {
+            window.removeEventListener("scroll", GoTopon);
         }
     })
-
+    
+    function GoTopon() {
+        if (window.scrollY <= 100 ) {
+            TT.current.style = "opacity:0"
+        } else{
+            TT.current.style = "opacity:0.7"
+        }
+    }
+    
     return (
         
         <button className="Top" onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }) }} ref={TT}>

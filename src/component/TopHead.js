@@ -18,9 +18,12 @@ function TopHead({ num }) {
     })
 
     menulist.current[1].classList.add("acitve");
-    setUsers(([{ id: Date.now(), name: SearchName2.current.value }, ...users]).slice(0, 4));
-    savesearch();
-    search(SearchName2.current.value);
+    if (SearchName2.current.value == "") {
+      return false
+    } else {
+      setUsers(([{ id: Date.now(), name: SearchName2.current.value }, ...users]).slice(0, 4));
+      search(SearchName2.current.value);
+    }
   }
 
   const search = (t) => {
@@ -28,7 +31,10 @@ function TopHead({ num }) {
     SearchName2.current.value = "";
     navigate("/sub/Search");
   }
-
+  useEffect(() => { 
+    savesearch();  
+  }, [users])
+  
   function savesearch() { 
     typeof(Storage) !== 'undefined' && localStorage.setItem("user", JSON.stringify(users));
   };
@@ -44,7 +50,7 @@ function TopHead({ num }) {
           clickbtn();
       }
   }
-
+  
   useEffect(() => {
     const findSearch = JSON.parse(localStorage.getItem("user"));
     if (findSearch !== null) {
@@ -53,18 +59,26 @@ function TopHead({ num }) {
     menulist.current[num].classList.add("active")
   }, []);
   
-  const TT = useRef();
+  const TH = useRef();
     
-  window.addEventListener("scroll", () => {
-      if (window.scrollY <= 30 ) {
-          TT.current.style = "transform:scaleY(1); opacity:1"
-      } else{
-          TT.current.style = "transform:scaleY(0); opacity:0"
-      }
-  })
+  useEffect(() => {
+    window.addEventListener("scroll", aa);
+
+    return () => {
+      window.removeEventListener("scroll", aa)
+    }
+  },[])
+    
+  function aa() { 
+    if (window.scrollY <= 30) {
+      TH.current.style = "transform:scaleY(1); opacity:1"
+    } else {
+      TH.current.style = "transform:scaleY(0); opacity:0"
+    }
+  }
   
   return (
-    <header ref={TT}>
+    <header ref={TH}>
       <div className="headerCon" onMouseLeave={() => setSlist(false)}>
 
       <nav className="menu">

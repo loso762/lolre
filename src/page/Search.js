@@ -68,24 +68,21 @@ function Search() {
     }
 
     // 배열의 최빈값 구하기
-    function getMode(array){
-        const counts = array.reduce((pv, cv)=>{
+    function getMode(array) {
+        const counts = array.reduce((pv, cv) => {
             pv[cv] = (pv[cv] || 0) + 1;
             return pv;
         }, {});
 
         const keys = Object.keys(counts);
-        let mode = keys[0];
-        keys.forEach((val, idx)=>{
-            if(counts[val] > counts[mode]){
-                mode = val;
-            }
-        });
-        return mode;
+        if (keys[0] == "") { return keys[1] }
+        else {
+            return keys[0]
+        }
     }
 
     useEffect(() => {
-
+        window.scrollTo(0, 0);
         axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?api_key=${APIKEY}`)
             .then((u) => {
                 const userData = u.data;
@@ -174,7 +171,7 @@ function Search() {
                                 Solo0();
                             } else if (Rankdata[0]?.queueType === "RANKED_SOLO_5x5") {
                                 setSoloR(Rankdata[0]);
-                                if (Rankdata[1].queueType === "RANKED_FLEX_SR") {
+                                if (Rankdata[1]?.queueType === "RANKED_FLEX_SR") {
                                     setFreeR(Rankdata[1]);
                                 }else{ Free0() }
                             } else if (Rankdata[0].queueType === "RANKED_TFT_DOUBLE_UP" && Rankdata[1].queueType === "RANKED_SOLO_5x5") {
@@ -214,10 +211,10 @@ return (
             <section className="info0 animate__animated animate__fadeIn">
                 <article className="userMainInfo">
                     <div className="IDLV">
-                            <p className="id"> ID : {Searchid} </p>
-                            <p className="level"> Level : {level.current} </p>
+                        <p className="id"> ID : {Searchid} </p>
+                        <p className="level"> Level : {level.current} </p>
                     </div>
-                    <CircularProgressBar percent={tWin / (tWin + tLose) * 100} colorSlice="#5383E8" colorCircle="#E84057" fontSize='1rem' size='130' speed='100' stroke='16' />
+                    <CircularProgressBar percent={Math.ceil(tWin / (tWin + tLose) * 100)} colorSlice="#5383E8" colorCircle="#E84057" fontSize='1rem' size={130} speed={100} stroke={16} />
                     <div>
                         <p className="recentWL"> {tWin}승 {tLose}패</p>
                         <p className="recentKD"> {(tK/MatchNum).toFixed(1)} / {(tD/MatchNum).toFixed(1)} / {(tAs/MatchNum).toFixed(1)} </p>

@@ -1,6 +1,6 @@
 $color-shadow: #BABECC;
-$color-white: #FFF;
-$color-bg: rgb(238, 237, 237);
+$color-white: rgb(255, 255, 255);
+$color-bg: rgba(243, 244, 243, 0.8);
 
 .Ranking{
     max-width: 1100px;
@@ -8,7 +8,7 @@ $color-bg: rgb(238, 237, 237);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-family: 'OTWelcomeRA';
+    font-family: 'GmarketSansMedium';
     color: rgb(69, 69, 69);
     background-color: transparent;
     z-index: 2;
@@ -25,7 +25,6 @@ $color-bg: rgb(238, 237, 237);
     .leagues{
         display: flex;
         justify-content: space-around;
-        font-family: 'GmarketSansMedium';
         margin: 50px 50px 0px;
         li{
             display: flex;
@@ -38,7 +37,7 @@ $color-bg: rgb(238, 237, 237);
             padding: 10px 0;
             border-radius: 10px;
             box-shadow: -2px -2px 10px $color-white,  2px 2px 10px #BABECC;
-            background-color: white;
+            background-color:$color-white;
             &:hover {
                 box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
             }
@@ -49,40 +48,31 @@ $color-bg: rgb(238, 237, 237);
         }
         
         li.active{
+            color:$color-white;
             &:nth-child(1){
                 background-color: #c7c5b5;
-                color: white;
             }
             &:nth-child(2){
                 background-color: #de4040;
-                color: white;
             }
             &:nth-child(3){
                 background-color: #9240de;
-                color: white;
             }
             &:nth-child(4){
                 background-color: #aface8;
-                color: white;
             }
             &:nth-child(5){
                 background-color: #89ce9f;
-                color: white;
             }
             &:nth-child(6){
                 background-color: goldenrod;
-                color: white;
             }
             &:nth-child(7){
                 background-color: silver;
-                color: white;
             }
             &:nth-child(8){
                 background-color: rgb(161, 112, 27);
-                color: white;
             }
-            background-color: #f07d8d;
-            color: white;
         }
     }
     
@@ -92,16 +82,15 @@ $color-bg: rgb(238, 237, 237);
         transform: scaleY(0);
         justify-content: center;
         margin: 40px 50px;
-        font-family: 'GmarketSansMedium';
         transition: 0.5s;
         overflow: hidden;
         padding: 20px 0;
         li{
             text-align: center;
-            width: 12%;
+            width: 9%;
             cursor: pointer;
             margin: 0 20px;
-            background-color: white;
+            background-color:$color-white;
             color: rgb(138, 138, 138);
             padding: 8px 0;
             border-radius: 10px;
@@ -132,9 +121,9 @@ $color-bg: rgb(238, 237, 237);
         width: 95%;
         margin: 0 auto 50px;
         color: rgb(48, 48, 48);
-        background-color:  rgba(243, 244, 243, 0.8);
+        background-color: $color-bg;
         text-shadow: 1px 1px 0 $color-white;
-        box-shadow: -5px -5px 15px $color-white,  5px 5px 20px #BABECC;
+        box-shadow: -1px -1px 10px $color-white,  1px 1px 10px #BABECC;
         border-radius: 10px;
         padding-bottom: 10px;
         li{
@@ -155,13 +144,6 @@ $color-bg: rgb(238, 237, 237);
                 text-align: center;
             }
 
-            &:nth-child(1) {
-                border: none;
-                box-shadow: none;
-                &:hover{
-                    box-shadow: none;
-                }
-            } 
             &:nth-child(2),&:nth-child(3),&:nth-child(4) {
                 .rank{
                     color: black;
@@ -218,7 +200,7 @@ $color-bg: rgb(238, 237, 237);
                 align-items: center;
                 padding-top: 4px;
                 &:hover{
-                    font-size: 17px;
+                    font-size: 19px;
                     color: rgb(240, 125, 141);
                 }
             }
@@ -279,6 +261,8 @@ $color-bg: rgb(238, 237, 237);
             align-items: center;
             position: relative;
             background-color: transparent;
+            border: none;
+            box-shadow: none;
             p{
                 text-align: center;
                 &:nth-child(1){
@@ -297,6 +281,9 @@ $color-bg: rgb(238, 237, 237);
                 &:nth-child(5){
                     width: 12%;
                 }
+            }
+            &:hover{
+                box-shadow: none;
             }
         }
     }
@@ -332,36 +319,33 @@ $min : 240px;
             margin: 0px 4vw 0px;
             li{
                 width: 23%;
-                margin: 10px 1%;
+                margin: 10px 1px 1px;
                 font-size: 14px;
                 word-break : keep-all;
                 padding: 8px 0;
+                box-shadow: 0px 0px 5px $color-white,  0px 0px 5px #BABECC;
+                background-color: rgba(255, 255, 255, 0.9);
             }
         }
     
         .division {
-            margin: 20px 0;
-            padding: 0 3vw;
+            margin: 15px 0;
+            padding: 0 4vw;
             height: 55px;
+            align-items: center;
             li{
-                width: 19%;
-                height: 35px;
-                margin: 0 3vw;
+                width: 16%;
+                height: 30px;
+                margin: 0 2vw;
+                padding: 0;
+                line-height: 30px;
+                box-shadow: 0px 0px 5px $color-white,  0px 0px 5px #BABECC;
             }
         }
 
         .rankers{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 95%;
-            margin: 0 auto 50px;
-            color: rgb(48, 48, 48);
-            background-color:  #eeeff3;
-            text-shadow: 1px 1px 0 $color-white;
-            box-shadow: -5px -5px 15px $color-white,  5px 5px 20px #BABECC;
-            border-radius: 10px;
-            padding-bottom: 10px;
+            box-shadow: 0px 0px 5px $color-white,  0px 0px 5px #BABECC;
+            background-color:  rgba(243, 244, 243, 0.5);
             li{
                 width: 95%;
                 height: 50px;
@@ -374,23 +358,16 @@ $min : 240px;
                 box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.2);     
                 transition: 1s;
                 background-color: $color-white;
-                font-size: 13px;
                 
                 p{
                     display: block;
                     text-align: center;
                 }
-    
-                &:nth-child(1) {
-                    border: none;
-                    box-shadow: none;     
-                    background-color:  #eeeff3;
-                } 
                 &:nth-child(2),&:nth-child(3),&:nth-child(4) {
                     .rank{
                         color: black;
                         background: url("https://ifh.cc/g/lnhNBV.png") no-repeat;
-                        background-size: 83px;
+                        background-size: 75px;
                         height: 25px;
                         width: 30px;
                         padding: 0 8px;
@@ -404,17 +381,17 @@ $min : 240px;
                 }
                 &:nth-child(2) {
                     .rank{
-                        background-position:-1px -19px;
+                        background-position:0px -19px;
                     }
                 }   
                 &:nth-child(3) {
                     .rank{
-                        background-position:-27.5px -19px;
+                        background-position:-25px -19px;
                     }
                 }   
                 &:nth-child(4) {
                     .rank{
-                        background-position:-53.5px -19px;
+                        background-position:-49px -19px;
                     }
                 }   
                 
@@ -429,7 +406,7 @@ $min : 240px;
                     align-items: center;
                     padding-top: 4px;
                 }
-    
+                
                 .rankerName{
                     text-align: left;
                     font-size: 13px;
@@ -447,11 +424,13 @@ $min : 240px;
                     align-items: center;
                     justify-content: center;
                     padding-top: 4px;
+                    font-size: 12px;
                 }
     
                 .winlose{
-                    min-width: 100px;
+                    min-width: 90px;
                     margin: 0 10px;
+                    font-size: 11px;
                     .win{
                         padding-left : 5px;  
                     }
@@ -462,6 +441,7 @@ $min : 240px;
                 
                 .Odds{
                     padding-right: 10px;
+                    font-size: 12px;
                 }
                 &:hover{
                     box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
@@ -470,17 +450,17 @@ $min : 240px;
                     box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
                 }
             }
+
             .topItem{
-                width: 95%;
                 height: 50px;
-                margin: 10px auto ;
-                padding: 10px 0 20px;
-                display: flex;
-                align-items: center;
-                position: relative;
+                margin: 5px auto 0;
+                font-size: 13px;
+                background-color: transparent;
+                border: none;
+                box-shadow: none; 
                 p{
                     &:nth-child(1){
-                        width: 33px;
+                        width: 40px;
                         padding: 0;
                         margin: 0;
                         margin-left: 1vw;
@@ -488,18 +468,17 @@ $min : 240px;
                     &:nth-child(2){
                         width: 50%;
                         text-align: left;
-                        margin-left: 2vw;
+                       padding-left: 3vw;
                     }
                     &:nth-child(3){
                         width: 13%;
                     }
                     &:nth-child(4){
-                        width: 15%;
-                        min-width: 100px;
-                        margin: 0 10px;
+                        min-width: 90px;
+                        margin: 0 5px;
                     }
                     &:nth-child(5){
-                        width: 14%;
+                        width: 16%;
                         padding-right: 5px;
                     }
                 }

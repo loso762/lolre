@@ -26,7 +26,6 @@ function First() {
         } else {
             tempUsers = users;
             tempUsers.unshift({ id: Date.now(), name: SearchName.current.value });
-            console.log(tempUsers.slice(0, 4));
             savesearch();
             setUsers(tempUsers.slice(0, 4));
             search(SearchName.current.value);
@@ -34,7 +33,6 @@ function First() {
     };
 
     const deleteList = (e) => {
-        console.log(e.target.parentElement);
         const li = e.target.parentElement;
         setUsers(users.filter((users) => users.id != parseInt(li.id)));
         savesearch();
@@ -57,11 +55,13 @@ function First() {
     };
     
     return (
-        <section className="Homesearch">
+        <section className="Homesearch" onClick={() => setSlist(!Slist)}>
             <div className="wrapper">
                 <h1 data-heading="LOLCORD">LOLCORD</h1>
             </div>
-            <div className="searchwrapper animate__animated animate__fadeInUp" onClick={() => setSlist(!Slist)}>
+            <div className="searchwrapper animate__animated animate__fadeInUp"
+                onClick={() => setSlist(!Slist)}
+            >
                 <input type="text" ref={SearchName} placeholder="소환사명을 입력해주세요" className="inputID" onKeyDown={onKeyPress}/>
                 <button className="inputIDBtn" value="" ref={SearchBtn} onClick={() => clickbtn()}/>
                 {

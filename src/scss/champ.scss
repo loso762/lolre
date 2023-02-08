@@ -10,8 +10,8 @@ $color-red: rgb(240, 125, 141);
     outline: 0;
     border-radius: 10px;
     position: relative;
-    background-color: #eff0f5ce;
-    box-shadow: -3px -3px 11px #FFF,  2px 2px 12px #BABECC;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -1px -1px 6px #FFF,  1px 1px 6px #BABECC;
     
     h2{
         color: $color-red;
@@ -291,7 +291,7 @@ $color-red: rgb(240, 125, 141);
                     display: block;
                     width: 40%;
                     margin: 0;
-                    text-transform: uppercase
+                    text-transform: uppercase;
                 }
                 div{
                     width: 60%;
@@ -436,8 +436,7 @@ $color-red: rgb(240, 125, 141);
         li{
             width: auto;
             padding: 8px calc(1vw + 16px);
-            border: 1px solid rgb(228, 228, 228);
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             margin: 5px;
             cursor: pointer;
@@ -473,8 +472,7 @@ $color-red: rgb(240, 125, 141);
             height: 35px;
             display: flex;
             align-items: center;
-            border: 1px solid rgb(242, 242, 242);
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
@@ -534,7 +532,6 @@ $min : 240px;
                 width: auto;
                 padding: 8px 2vw;
                 border: 1px solid rgb(228, 228, 228);
-                background-color: white;
                 border-radius: 5px;
                 margin: 5px;
                 cursor: pointer;
@@ -756,15 +753,23 @@ $min : 240px;
             flex-wrap: wrap;
             border-bottom: 1px solid #5e5e5e;
             li{
-                width: 30%;
-                padding: 8px 2vw;
+                width: 29%;
+                padding: 8px 1vw;
+                &.active{
+                    border: none;
+                }
             }
         }
 
         .champList{
             padding: 0;
+            margin-top: 20px;
             li{
-                padding: 2px 10px;
+                padding: 2px 8px;
+                margin: 2px;
+                &.active{
+                    border: none;
+                }
             }
         }
     }

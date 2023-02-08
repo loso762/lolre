@@ -34,7 +34,7 @@
     "key": "Electrocute",
     "icon": "perk-images/Styles/Domination/Electrocute/Electrocute.png",
     "name": "감전",
-    "shortDesc": "3초 동안 같은 챔피언에게 기본 공격 또는 개별</b> 스킬 3회를 적중시키면 추가 적응형 피해 적용"
+    "shortDesc": "3초 동안 같은 챔피언에게 기본 공격 또는 개별 스킬 3회를 적중시키면 추가 적응형 피해 적용"
   },
   {
     "id": 8124,

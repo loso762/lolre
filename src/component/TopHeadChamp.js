@@ -49,14 +49,24 @@ function TopHeadChamp({setCtype ,num, setnum , wL}) {
   },[])
   
   const TT = useRef();
+  
+
+  useEffect(() => {
+    window.addEventListener("scroll", headeron);
+
+    return () => {
+      window.removeEventListener("scroll", headeron)
+    }
+  },[])
     
-  window.addEventListener("scroll", () => {
-      if (window.scrollY <= 70 ) {
-          TT.current.style = "transform:scaleY(1); opacity:1"
-      } else{
-          TT.current.style = "transform:scaleY(0); opacity:0"
-      }
-  })
+  function headeron() { 
+    if (window.scrollY <= 30) {
+      TT.current.style = "transform:scaleY(1); opacity:1"
+    } else {
+      TT.current.style = "transform:scaleY(0); opacity:0"
+    }
+  }
+  
 
   return (
     <header ref={TT}>

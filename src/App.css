@@ -64,7 +64,7 @@ body,html{
 @media (min-width:240px) and (max-width:768px) {
 
     .mainbg{
-      background: url('https://ifh.cc/g/rKN3K9.jpg') center / cover;
+      background: url('https://ifh.cc/g/rKN3K9.jpg') top center / cover;
       background-size: cover;
       opacity: 0.8;
   }

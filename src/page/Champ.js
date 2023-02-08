@@ -37,7 +37,6 @@ function Champ() {
     let champType = [];
     champType = championData.filter((c) => type == c.tags[0]);
     setChamp(champType[0].id);
-
     wL[num].classList.remove("active");
     setnum(key);
   }

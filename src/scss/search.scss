@@ -1,9 +1,19 @@
 
-$color-bg: rgba(243,243,243);
+$color-bg: rgba(243, 243, 243, 1);
 $color-shadow: #BABECC;
 $color-white: #FFF;
 $color-red: rgb(240, 125, 141);
 $transp: rgb(255, 255, 255,0);
+
+
+%div-style {
+    background-color: $color-bg;
+    box-shadow: -3px -3px 10px #FFF,  3px 3px 10px #BABECC;
+    border-radius: 25px;
+    transition: 1s;
+    display: flex;
+    position: relative;
+}
 
 .userInfo{
     max-width: 1100px;
@@ -25,18 +35,13 @@ $transp: rgb(255, 255, 255,0);
     }
 
     .info0{
+        @extend %div-style;
         margin: 30px 0;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
         height: 250px;
-        border-radius: 25px;
         padding: 40px 20px;
-        background-color:  rgba(243, 244, 243);
-        box-shadow: -3px -3px 10px #FFF,  3px 3px 10px #BABECC;
-        position: relative;
-        transition: 1s;
         
         .userMainInfo{
             display: flex;
@@ -119,7 +124,7 @@ $transp: rgb(255, 255, 255,0);
                         font-size: 13px;
                         opacity: 0.7;
                         &::after {
-                            border-bottom: 5px solid #2d2d2d;
+                            border-bottom: 5px solid #4d4d4d;
                             border-left: 5px solid $transp;
                             border-right: 5px solid $transp;
                             border-top: 0px solid $transp;
@@ -161,7 +166,7 @@ $transp: rgb(255, 255, 255,0);
             display: block;
             background-color: $transp;
             position: absolute;
-            border-radius:  6px 30px;
+            border-radius:  6px 32px;
             width: 80px;
             height: 40px;
             transition: 1s;
@@ -203,14 +208,9 @@ $transp: rgb(255, 255, 255,0);
     }
 
     .info1{
-        display: flex;
+        @extend %div-style;
         justify-content: space-between;
         height: 450px;
-        position: relative;
-        border-radius: 25px;
-        background-color:  $color-bg;
-        box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
-        transition: 1s;
 
         .RankInfoCon{
             display: flex;
@@ -511,8 +511,8 @@ $transp: rgb(255, 255, 255,0);
                                     background: #383838;
                                     border-radius: 10px;
                                     position: absolute;
-                                    bottom: -7px;
-                                    transform: translateY(105%);    
+                                    bottom: -15px;
+                                    transform: translateY(92%);    
                                     color: white;    
                                     display: none;
                                     line-height: 150%;        
@@ -723,6 +723,23 @@ $min : 240px;
 @include device($mobile,$tablet){
     
     .userInfo{
+        padding: 0 4vw 50px;
+        
+        .info0 {
+            padding: 40px 10px;
+            .userMainInfo {
+                width: 64%;
+                .IDLV p{font-size: 17px;}
+                div:nth-child(2){
+                    transform: scale(0.8) translateX(-5px);
+                }
+            }
+
+            .likePosition{
+                width: 35%;
+            }
+        }
+        
         .info1{
             .RankInfoCon{
                 width: 50%;
@@ -1014,19 +1031,23 @@ $min : 240px;
                         margin: 1px 0;
                         padding-right: 5px;
                         margin-bottom: 3px;
-                        &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5){
-                            justify-content: left;
-                            padding-left: calc(12vw + 50px);
-                            position: relative;
-                            p{
-                                position: absolute;
-                                left: 0%;
-                            }
-                            img{
-                                position: absolute;
-                                left: 12vw;
+
+                        @for $i from 1 through 5 {
+                            &:nth-child(#{$i}){
+                                justify-content: left;
+                                padding-left: calc(12vw + 50px);
+                                position: relative;
+                                p{
+                                    position: absolute;
+                                    left: 0%;
+                                }
+                                img{
+                                    position: absolute;
+                                    left: 12vw;
+                                }
                             }
                         }
+                        
                         p{
                             width: 31%;
                             word-spacing: -2px;
@@ -1064,6 +1085,7 @@ $min : 240px;
             height: 390px;
             .userMainInfo{
                 display: flex;
+                justify-content: center;
                 align-items: center;
                 width: 100%;
                 height: 160px;
@@ -1083,19 +1105,19 @@ $min : 240px;
                         transform: scale(0.7) translateX(-14px);
                     }
                     .recentWL{
-                        font-size: 13px;
+                        font-size: calc(10px + 1vw);
                     }
                     .recentKD , .recentKDP{
-                        font-size: 12px;
+                        font-size: calc(10px + 1vw);
                         span{
-                            font-size: 12px;
+                            font-size: calc(10px + 1vw);
                             width: 35px;
                             color: red;
                         }
                     }
                     .recentKDV{
                         color: rgb(255, 106, 106);
-                        font-size: 12px;
+                        font-size: calc(10px + 1vw);
                     }
                 }
                 .IDLV{
@@ -1104,7 +1126,7 @@ $min : 240px;
                     flex-direction: column;
                     p{
                         text-align: left;
-                        font-size: 14px;
+                        font-size: calc(10px + 1vw);
                         margin: 15px 0;
                     }
                 }
@@ -1114,21 +1136,22 @@ $min : 240px;
                 width: 100%;
                 display:flex;
                 flex-direction: column;
-                height: 120px;
+                height: 130px;
                 position: relative;
                 padding-top: 10px;
-                margin-top: 40px;
+                margin-top: 45px;
                 h4{
                     position: absolute;
                     top: 0;
                     left: 50%;
-                    font-size: 13px;
+                    font-size: calc(10px + 1vw);
                     transform: translateY(-140%) translateX(-50%);
                 }
                 ul{
                     width: 100%;
                     display: flex;
                     justify-content:space-around;
+                    margin-top: 10px;
                     height: 100%;
                     li{
                         width: 20px;
@@ -1248,7 +1271,7 @@ $min : 240px;
                             margin: 0;
                             display: flex;
                             align-items: center;
-                            font-size: 12px;
+                            font-size: calc(9px + 1vw);
                             color: rgb(50, 50, 50);
                             word-spacing: 3px;
                                         
@@ -1274,7 +1297,6 @@ $min : 240px;
                 margin-top: 50px;
                 background-color: $color-bg;
                 transition: 1s;
-
                 
                 h3{
                     font-size: 23px;
@@ -1421,7 +1443,7 @@ $min : 240px;
             }
 
             .matchCon{
-                width: 100%;
+                width: auto;
                 height: 510px;
                 flex-direction: column;
                 padding: 5px;
@@ -1438,7 +1460,7 @@ $min : 240px;
                     flex-wrap: wrap;
 
                     .MI1{
-                        width: 55px;
+                        width: calc(34px + 5vw);
                         height: 100%;
                         display: flex;
                         flex-direction: column;
@@ -1469,12 +1491,13 @@ $min : 240px;
                     }
 
                     .MI2{
-                        max-width: 190px;
+                        max-width: calc(50px + 40vw);
                         height: 90%;
                         display: flex;
                         justify-content: space-between;
                         flex-wrap: wrap;
-                        margin-right:0;
+                        margin-right : 0;
+                        margin-left: 2vw;
 
                         .mySpell{
                             width: 50%;
@@ -1484,11 +1507,11 @@ $min : 240px;
                             flex-wrap: wrap;
                             figure{
                                 margin: 0;
-                                width: 30px;
-                                height: 30px;
+                                width: calc(27px + 3vw);
+                                height: calc(27px + 3vw);
                                 position: relative;
                                 transition: 0.6s;
-                                margin: 0 1px;
+                                margin: 0 0.8vw;
 
                                 &:hover{
                                     img{
@@ -1501,10 +1524,9 @@ $min : 240px;
                                     }
                                 }
                                 img{
-                                    width: 30px;
-                                    height: 30px;
+                                    width: calc(29px + 1vw);
+                                    height: calc(29px + 1vw);
                                     border-radius: 7px;
-                                    margin: 2px 2px 0 0;
                                     transition: 0.3s;
                                 }
                                 figcaption{
@@ -1564,8 +1586,8 @@ $min : 240px;
                             padding: 0 2px;
                             figure{
                                 margin: 0;
-                                width: 26px;
-                                height: 26px;
+                                width: calc(23px + 2vw);
+                                height: calc(23px + 2vw);
                                 position: relative;
                                 img{
                                     width: 90%;
@@ -1610,6 +1632,7 @@ $min : 240px;
                     }
 
                     .MI3{
+                        width: 80%;
                         height:60px;
                         display: flex;
                         flex-wrap: wrap;
@@ -1633,13 +1656,13 @@ $min : 240px;
 
                     figure{
                         position: relative;
-                        width: 70px;
-                        height: 70px;
+                        width: calc(60px + 3vw);
+                        height: calc(60px + 3vw);
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        margin: 0 0.5vw 0 0;
+                        margin: 0 1% 0 ;
                         .lane{
                             margin: 10px 0;
                         }
@@ -1700,7 +1723,7 @@ $min : 240px;
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
-                    border-top: #7e7e7e 1px solid;
+                    border-top: rgb(153, 153, 153) 2px solid;
                     border-radius: 0;
 
                     .participants{
@@ -1743,7 +1766,7 @@ $min : 240px;
                             }
                         }
                 }
-            }
+                }
             }
         }
     }
