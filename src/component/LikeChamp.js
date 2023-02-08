@@ -27,9 +27,9 @@ const LikeChamp = ({ TChamp, championData,champClick }) => {
                                         } else { EndPlay = `${lasttime % 60}분 전` }
 
                                         return (
-                                            <li key={k} onClick={()=>champClick(cd.id)}>
-                                                <img src={`../img/champion/${cd.id}.png`} alt=''/>
-                                                <h4>{cd.name}</h4>
+                                            <li key={k}>
+                                                <img src={`../img/champion/${cd.id}.png`} alt='' onClick={() => champClick(cd.id)}/>
+                                                <h4 onClick={() => champClick(cd.id)}>{cd.name}</h4>
                                                 <p>{t.championPoints}</p>
                                                 <p>{EndPlay}</p>
                                             </li>

@@ -188,7 +188,7 @@ $transp: rgb(255, 255, 255,0);
         &:hover{
             box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
             background-color: rgb(250, 250, 250);
-            
+            transform: scaleX(0.99);
             .likePosition ul li{
                 background-color: rgb(182, 182, 182);
             }

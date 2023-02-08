@@ -66,7 +66,6 @@ function Search() {
         setChamp(name);
         navigate("/sub/Champ");
     }
-
     // 배열의 최빈값 구하기
     function getMode(array) {
         const counts = array.reduce((pv, cv) => {
@@ -137,12 +136,9 @@ function Search() {
                 
                 const setFreeR = (arr) => {
                     setFree({
-                        tier: arr.tier,
-                        rank: arr.rank,
-                        LP: arr.leaguePoints,
-                        win: arr.wins,
-                        lose: arr.losses,
-                        rate: (arr.wins / (arr.wins + arr.losses) * 100).toFixed(1)
+                        tier: arr.tier,rank: arr.rank,
+                        LP: arr.leaguePoints, win: arr.wins,
+                        lose: arr.losses, rate: (arr.wins / (arr.wins + arr.losses) * 100).toFixed(1)
                     })
                 }
 
@@ -200,7 +196,7 @@ function Search() {
                         }
                         setTChamp(tempChamp);
                     })
-            }).catch(error => alert("소환사명을 정확히 입력해 주세요!"));
+            }).catch(error => console.log("소환사명을 정확히 입력해 주세요!"));
     }, [user])
     
 return (
@@ -218,17 +214,8 @@ return (
                     <div>
                         <p className="recentWL"> {tWin}승 {tLose}패</p>
                         <p className="recentKD"> {(tK/MatchNum).toFixed(1)} / {(tD/MatchNum).toFixed(1)} / {(tAs/MatchNum).toFixed(1)} </p>
-                        {
-                            tD == 0 ? 
-                                <>
-                                    <p className="recentKDP"> 1 : 1 </p>
-                                    <p className="recentKDV"> 킬관여 : 0%</p>
-                                </> : 
-                                <>
-                                    <p className="recentKDP"> {((tK + tAs) / tD).toFixed(2)} : 1 </p>
-                                    <p className="recentKDV"> 킬관여 : {((tK + tAs) / teamKill * 100).toFixed(1)}%</p>
-                                </>
-                        }
+                        <p className="recentKDP"> {tD !== 0 ? ((tK + tAs) / tD).toFixed(2) : 1} : 1 </p>
+                        <p className="recentKDV"> 킬관여 : {teamKill !== 0 ? ((tK + tAs) / teamKill * 100).toFixed(1) : 0}%</p>
                     </div>
                 </article>
                 <article className="likePosition">

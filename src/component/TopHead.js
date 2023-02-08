@@ -30,6 +30,7 @@ function TopHead({ num }) {
   const search = (t) => {
     setUser(t);
     SearchName2.current.value = "";
+    setSlist(false);
     navigate("/sub/Search");
   }
 
@@ -56,7 +57,8 @@ function TopHead({ num }) {
     if (findSearch !== null) {
       setUsers(findSearch) //전에 있던 items 유지
     }
-    menulist.current[num].classList.add("active")
+    menulist.current[num].classList.add("active");
+    SearchName2.current.focus();
   }, []);
   
     
