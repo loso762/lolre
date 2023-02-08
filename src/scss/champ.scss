@@ -435,12 +435,14 @@ $color-red: rgb(240, 125, 141);
         border-bottom: 1px solid #5e5e5e;
         li{
             width: 100px;
-            padding: 8px 0;
+            height: 40px;
+            padding: 0;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             margin: 5px;
             cursor: pointer;
             text-align: center;
+            line-height: 40px;
             transition: 0.4s;
             &.active{
                 background-color: $color-red;
@@ -451,7 +453,6 @@ $color-red: rgb(240, 125, 141);
 
             }
             &:hover{
-                font-size: 17px;
                 border: 1px #f07d8d solid;  
                 color: #f07d8d;
             }
@@ -479,7 +480,7 @@ $color-red: rgb(240, 125, 141);
             transition: 0.3s;
             &.active{
                 background-color: $color-red;
-                transform: scale(1.04);
+                transform: scale(1.02);
                 color: white;
                 &:hover{
                     color: white;
@@ -487,9 +488,7 @@ $color-red: rgb(240, 125, 141);
             }
             &:hover{
                 color:  #f07d8d;
-                border: 1px #f07d8d solid;  
-                font-size: 16.5px;
-                padding: 2px 14.5px;
+                border: 1px #f07d8d solid; 
             }
         }
     }
@@ -531,13 +530,7 @@ $min : 240px;
             border-bottom: 1px solid #5e5e5e;
             li{
                 width: auto;
-                padding: 8px 2vw;
-                border: 1px solid rgb(228, 228, 228);
-                border-radius: 5px;
-                margin: 5px;
-                cursor: pointer;
-                text-align: center;
-                transition: 0.4s;
+                padding: 0 10px;
                 &.active{
                     background-color: $color-red;
                     color: white;
@@ -548,8 +541,8 @@ $min : 240px;
                 }
                 &:hover{
                     font-size: 17px;
-                    border: 1px #5766a8 solid;  
-                    color: #4459b7;
+                    border: 1px $color-red solid;  
+                    color: $color-red;
                 }
             }
         }
@@ -755,7 +748,7 @@ $min : 240px;
             border-bottom: 1px solid #5e5e5e;
             li{
                 width: 29%;
-                padding: 8px 1vw;
+                line-height: 40px;
                 &.active{
                     border: none;
                 }

@@ -36,7 +36,6 @@ $color-bg: rgba(243, 244, 243, 0.8);
             color: rgb(78, 78, 78);
             padding: 10px 0;
             border-radius: 10px;
-            box-shadow: -2px -2px 10px $color-white,  2px 2px 10px #BABECC;
             background-color:$color-white;
             &:hover {
                 box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
@@ -94,7 +93,6 @@ $color-bg: rgba(243, 244, 243, 0.8);
             color: rgb(138, 138, 138);
             padding: 8px 0;
             border-radius: 10px;
-            box-shadow: -2px -2px 10px $color-white,  2px 2px 10px #BABECC;
             &:hover {
                 box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
             }
@@ -323,7 +321,6 @@ $min : 240px;
                 font-size: 14px;
                 word-break : keep-all;
                 padding: 8px 0;
-                box-shadow: 0px 0px 5px $color-white,  0px 0px 5px #BABECC;
                 background-color: rgba(255, 255, 255, 0.9);
             }
         }
@@ -339,7 +336,6 @@ $min : 240px;
                 margin: 0 2vw;
                 padding: 0;
                 line-height: 30px;
-                box-shadow: 0px 0px 5px $color-white,  0px 0px 5px #BABECC;
             }
         }
 
