@@ -161,7 +161,7 @@ function Champ() {
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/AttackSpeed.png"/>
+                      <img src="../img/StatMods/Ats.png"/>
                       <figcaption>공격속도</figcaption>
                     </figure>{champInfo.stats.attackspeed} (+{champInfo.stats.attackspeedperlevel})
                   </div>

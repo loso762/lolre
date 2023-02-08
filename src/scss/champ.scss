@@ -434,8 +434,8 @@ $color-red: rgb(240, 125, 141);
         padding: 15px;
         border-bottom: 1px solid #5e5e5e;
         li{
-            width: auto;
-            padding: 8px calc(1vw + 16px);
+            width: 100px;
+            padding: 8px 0;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             margin: 5px;
@@ -472,6 +472,7 @@ $color-red: rgb(240, 125, 141);
             height: 35px;
             display: flex;
             align-items: center;
+            word-break: keep-all;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             cursor: pointer;
@@ -767,6 +768,8 @@ $min : 240px;
             li{
                 padding: 2px 8px;
                 margin: 2px;
+                font-size: 12.5px;
+                height: 30px;
                 &.active{
                     border: none;
                 }

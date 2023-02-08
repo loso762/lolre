@@ -4,6 +4,7 @@ import { Link , useNavigate } from "react-router-dom";
 import { whatSearch } from "../context/whatSearch";
 
 function TopHead({ num }) {
+  const TH = useRef();
   const navigate = useNavigate();
   const SearchBtn2 = useRef();
   const SearchName2 = useRef();
@@ -31,9 +32,8 @@ function TopHead({ num }) {
     SearchName2.current.value = "";
     navigate("/sub/Search");
   }
-  useEffect(() => { 
-    savesearch();  
-  }, [users])
+
+  useEffect(() => { savesearch() }, [users])
   
   function savesearch() { 
     typeof(Storage) !== 'undefined' && localStorage.setItem("user", JSON.stringify(users));
@@ -59,17 +59,15 @@ function TopHead({ num }) {
     menulist.current[num].classList.add("active")
   }, []);
   
-  const TH = useRef();
     
   useEffect(() => {
-    window.addEventListener("scroll", aa);
-
+    window.addEventListener("scroll", scrollM);
     return () => {
-      window.removeEventListener("scroll", aa)
+      window.removeEventListener("scroll", scrollM)
     }
   },[])
-    
-  function aa() { 
+   
+  function scrollM() { 
     if (window.scrollY <= 30) {
       TH.current.style = "transform:scaleY(1); opacity:1"
     } else {
