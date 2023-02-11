@@ -15,7 +15,7 @@ function Champ() {
   const [skinNum, setskinNum] = useState(0);
   const [skinKey, setskinKey] = useState(0);
   const [skinName, setskinName] = useState("");
-  const [onskins, setonskins] = useState(true);
+  const [onskins, setonskins] = useState(false);
   const skin = useRef();
   const skinImg = useRef();
   const skinP = useRef();
@@ -51,17 +51,14 @@ function Champ() {
     wL[num].classList.remove("active");
     setnum(key);
     setskinNum(0);
+    setonskins(false);
   }
 
   const clickChamp = (e, id) => {
     e.stopPropagation();
     setChamp(id);
     setskinNum(0);
-  }
-
-  function clickSkin(){
-    setonskins(!onskins);
-    skin.current.classList.toggle('active');
+    setonskins(false);
   }
 
   return (
@@ -100,9 +97,9 @@ function Champ() {
                 <article className="mainInfo">
                   
                   <figure>
-                    <img src={`../img/champ2/${champInfo.id}_0.jpg`} alt="" onClick={() => clickSkin()} />
+                    <img src={`../img/champ2/${champInfo.id}_0.jpg`} alt="" onClick={() => setonskins(!onskins)} />
                     <p className="name">{champInfo.name}, {champInfo.title}</p> 
-                    <div className="skins" ref={skin}>
+                    <div className={onskins ? "skins active" : "skins"} ref={skin}>
                       <a href="https://www.youtube.com/channel/UCCMQyaKDjQJY79VimTdaYYQ" target="_blank" className="ULink">관련 유튜브</a>
                       {
                         (champInfo.skins).map((c, key) => {
@@ -147,8 +144,8 @@ function Champ() {
                   {
                   skinNum != 0 ? (<div className="popup">
                                     <button onClick={() => setskinNum(0)}>✖️</button>
-                                    <span className="left" onClick={() => { setskinKey(skinKey-1) }}>◀️</span>
-                                    <span className="right" onClick={() => { setskinKey(skinKey+1) }}>▶️</span>    
+                                    <span className="left" onClick={() => { skinKey>1 ? setskinKey(skinKey-1): setskinKey(skinKey)}}>◀️</span>
+                                    <span className="right" onClick={() => { skinKey<Object.keys(skinImg).length-1 ? setskinKey(skinKey+1): setskinKey(skinKey) }}>▶️</span>    
                                     <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
                                     <p>{skinName}</p>
                                   </div>)
@@ -270,7 +267,6 @@ function Champ() {
             </>
           )
         }
-          
         </section>
     </main>
     </>
