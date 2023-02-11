@@ -242,7 +242,7 @@ return (
             
             <h2>랭크 & 주 챔피언</h2>
             <section className="info1">
-                <article className="RankInfoCon animate__animated animate__fadeInLeft">
+                <article className="RankInfoCon">
                     <RankInfo whatrank="솔로랭크" rank={solo} />
                     <RankInfo whatrank="자유랭크" rank={free} />
                 </article>

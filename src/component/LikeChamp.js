@@ -3,7 +3,7 @@ import React from "react";
 const LikeChamp = ({ TChamp, championData,champClick }) => {
 
     return (
-        <ul className="likeChamp animate__animated animate__fadeInRight">
+        <ul className="likeChamp">
             <div className="top">
                 <p>주 챔피언</p>
                 <p>챔피언포인트</p>

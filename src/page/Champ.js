@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState,useReducer } from "react";
 import '../scss/champ.scss';
 import TopHeadChamp from '../component/TopHeadChamp';
 import { whatSearch } from "../context/whatSearch";
@@ -6,17 +6,23 @@ import championData from "../json/champion.json"
 import axios from 'axios';
 import '../scss/champ.scss'
 
+
 function Champ() {
+
 
   const { champ, setChamp, num, setnum } = useContext(whatSearch);
   const [champInfo, setChampInfo] = useState();
+  const [skinNum, setskinNum] = useState(0);
+  const [skinKey, setskinKey] = useState(0);
+  const [skinName, setskinName] = useState("");
   const [onskins, setonskins] = useState(true);
   const skin = useRef();
+  const skinImg = useRef();
+  const skinP = useRef();
   const wL = useRef([]);
   const [ctype, setCtype] = useState([]);
   const tempDiv = ["Q","W","E","R"];
   const ChampionType = [{ e: "Assassin", k: "암살자" }, { e: "Fighter", k: "전사" }, { e: "Mage", k: "마법사" }, { e: "Marksman", k: "원거리딜러" }, { e: "Support", k: "서포터" }, { e: "Tank", k: "탱커" }];
-  
 
   useEffect(() => {
     wL[num].classList.remove("active");
@@ -33,24 +39,31 @@ function Champ() {
   }, [champ])
 
 
+  useEffect(() => {
+    skinImg[skinKey] && setskinNum(skinImg[skinKey].id);
+    skinImg[skinKey] && setskinName(skinP[skinKey].id);
+  },[skinKey])
+
   const clickList = (type,key) => {
     let champType = [];
     champType = championData.filter((c) => type == c.tags[0]);
     setChamp(champType[0].id);
     wL[num].classList.remove("active");
     setnum(key);
+    setskinNum(0);
   }
 
   const clickChamp = (e, id) => {
     e.stopPropagation();
     setChamp(id);
+    setskinNum(0);
   }
 
   function clickSkin(){
     setonskins(!onskins);
     skin.current.classList.toggle('active');
   }
-  
+
   return (
     <>
       <TopHeadChamp setnum={setnum} setCtype={setCtype} wL={wL} num={num} />
@@ -96,15 +109,20 @@ function Champ() {
                           if (c.num != 0) {
                             return (
                               <div key={key}>
-                                <img src={`../img/champ2/${champInfo.id}_${c.num}.jpg`} alt="" />
-                                <p>{c.name}</p>
+                                <img
+                                  id={c.num}
+                                  ref={ e => skinImg[key]=e }
+                                  src={`../img/champ2/${champInfo.id}_${c.num}.jpg`} alt=""
+                                  onClick={() => { setskinNum(c.num); setskinName(c.name); setskinKey(key) }}
+                                />
+                                <p ref={e => skinP[key] = e} id={c.name}>{c.name}</p>
                               </div>
                             )
                           }
                         })
                       }
                     </div>
-                    <figcaption>{champInfo.blurb}</figcaption>
+                    <figcaption className={onskins ? "active" : ""}>{champInfo.blurb}</figcaption>
                     {
                       onskins ? <span>스킨보기</span> : <span>스킨접기</span> 
                     }
@@ -124,6 +142,18 @@ function Champ() {
                       <figcaption>{(ChampionType.find(c => c.e == [champInfo.tags[1]]))?.k}</figcaption>
                     </figure>
                   </div>
+
+
+                  {
+                  skinNum != 0 ? (<div className="popup">
+                                    <button onClick={() => setskinNum(0)}>✖️</button>
+                                    <span className="left" onClick={() => { setskinKey(skinKey-1) }}>◀️</span>
+                                    <span className="right" onClick={() => { setskinKey(skinKey+1) }}>▶️</span>    
+                                    <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
+                                    <p>{skinName}</p>
+                                  </div>)
+                                : <></>
+                  }
                 </article>
                 
               <article className="stats">

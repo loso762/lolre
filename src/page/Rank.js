@@ -98,7 +98,7 @@ function Rank() {
   return (
     <>      
       <TopHead num={0} />
-      <main className="Ranking">
+      <main className="Ranking animate__animated animate__fadeIn">
         <h2>유저 랭킹</h2>
         <ul className="leagues">
           {

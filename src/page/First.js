@@ -56,7 +56,7 @@ function First() {
     
     return (
         <section className="Homesearch" onClick={() => setSlist(!Slist)}>
-            <div className="wrapper">
+            <div className="wrapper animate__animated animate__fadeInDown">
                 <h1 data-heading="LOLCORD">LOLCORD</h1>
             </div>
             <div className="searchwrapper animate__animated animate__fadeInUp"
