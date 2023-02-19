@@ -9,7 +9,6 @@ import '../scss/champ.scss'
 
 function Champ() {
 
-
   const { champ, setChamp, num, setnum } = useContext(whatSearch);
   const [champInfo, setChampInfo] = useState();
   const [skinNum, setskinNum] = useState(0);
@@ -23,6 +22,7 @@ function Champ() {
   const [ctype, setCtype] = useState([]);
   const tempDiv = ["Q","W","E","R"];
   const ChampionType = [{ e: "Assassin", k: "암살자" }, { e: "Fighter", k: "전사" }, { e: "Mage", k: "마법사" }, { e: "Marksman", k: "원거리딜러" }, { e: "Support", k: "서포터" }, { e: "Tank", k: "탱커" }];
+
 
   useEffect(() => {
     wL[num].classList.remove("active");
@@ -121,7 +121,7 @@ function Champ() {
                     </div>
                     <figcaption className={onskins ? "active" : ""}>{champInfo.blurb}</figcaption>
                     {
-                      onskins ? <span>스킨보기</span> : <span>스킨접기</span> 
+                      onskins ? <span>스킨접기</span> : <span>스킨보기</span> 
                     }
                   </figure>
 
@@ -142,13 +142,23 @@ function Champ() {
 
 
                   {
-                  skinNum != 0 ? (<div className="popup">
-                                    <button onClick={() => setskinNum(0)}>✖️</button>
-                                    <span className="left" onClick={() => { skinKey>1 ? setskinKey(skinKey-1): setskinKey(skinKey)}}>◀️</span>
-                                    <span className="right" onClick={() => { skinKey<Object.keys(skinImg).length-1 ? setskinKey(skinKey+1): setskinKey(skinKey) }}>▶️</span>    
-                                    <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
-                                    <p>{skinName}</p>
-                                  </div>)
+                  skinNum !== 0 ? (<div className="popup">
+                      <button onClick={() => setskinNum(0)}>✖️</button>
+                      
+                      <span
+                        className="left material-symbols-outlined"
+                        onClick={() => { skinKey > 1 ? setskinKey(skinKey - 1) : setskinKey(skinKey) }}
+                      >chevron_left</span>
+                      
+                      <span
+                        className="right material-symbols-outlined"
+                        onClick={() => { skinKey < Object.keys(skinImg).length - 1 ? setskinKey(skinKey + 1) : setskinKey(skinKey) }}
+                      >chevron_right</span>
+                        
+                      <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
+                      <p>{skinName}</p>
+                      </div>
+                        )
                                 : <></>
                   }
                 </article>
@@ -157,49 +167,49 @@ function Champ() {
                   <h3>챔피언 스탯</h3>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Health.png"></img>
+                      <img src="../img/StatMods/Health.png" alt=""></img>
                       <figcaption>HP</figcaption>
                     </figure>
                     {champInfo.stats.hp} (+{champInfo.stats.hpperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Mp.png"></img>
+                      <img src="../img/StatMods/Mp.png" alt=""></img>
                       <figcaption>MP</figcaption>
                     </figure>{champInfo.stats.mp} (+{champInfo.stats.mpperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Attack.png"></img>
+                      <img src="../img/StatMods/Attack.png" alt=""></img>
                       <figcaption>공격력</figcaption>
                     </figure>{champInfo.stats.attackdamage} (+{champInfo.stats.attackdamageperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Armor.png"></img>
+                      <img src="../img/StatMods/Armor.png" alt=""></img>
                       <figcaption>방어력</figcaption>
                     </figure>{champInfo.stats.armor} (+{champInfo.stats.armorperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/MagicResist.png"></img>
+                      <img src="../img/StatMods/MagicResist.png" alt=""></img>
                       <figcaption>마법저항력</figcaption>
                     </figure>{champInfo.stats.spellblock} (+{champInfo.stats.spellblockperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Ats.png"/>
+                      <img src="../img/StatMods/Ats.png" alt=""/>
                       <figcaption>공격속도</figcaption>
                     </figure>{champInfo.stats.attackspeed} (+{champInfo.stats.attackspeedperlevel})
                   </div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Speed.png"/>
+                      <img src="../img/StatMods/Speed.png" alt=""/>
                       <figcaption>이동속도</figcaption>
                     </figure>{champInfo.stats.movespeed}</div>
                   <div>
                     <figure>
-                      <img src="../img/StatMods/Range.png"/>
+                      <img src="../img/StatMods/Range.png" alt=""/>
                       <figcaption>사거리</figcaption>
                     </figure>{champInfo.stats.attackrange}</div>
                   

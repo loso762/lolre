@@ -36,50 +36,65 @@ function Search() {
     const [teamKill, setteamKill] = useState(0);
     const [position, setPosition] = useState([]);
     
-    let tempWin = 0;
-    let tempLose = 0;
-    let tempKill = 0;
-    let tempDeath = 0;
-    let tempAssist = 0;
-    let tempteamKills = 0;
-    let tempPosition = [];
+    let tempWin = 0, tempLose = 0,
+        tempKill = 0, tempDeath = 0,
+        tempAssist = 0,
+        tempteamKills = 0,
+        tempPosition = [];
     
-    const Solo0 = () => {
-        setSolo({rank : "",tier : "Unranked",LP : 0,win : 0,lose : 0,rate : 0})
-    }
-    const Free0 = () => {
-        setFree({rank : "",tier : "Unranked",LP : 0,win : 0,lose : 0,rate : 0})
-    }
+    const Solo0 = () => { setSolo({rank : "",tier : "Unranked",LP : 0,win : 0,lose : 0,rate : 0}) }
+    const Free0 = () => { setFree({rank : "",tier : "Unranked",LP : 0,win : 0,lose : 0,rate : 0}) }
 
     const MyPosition = ["TOP", "JUNGLE", "MIDDLE", "UTILITY", "BOTTOM"];
 
     const champClick = (name) => {
-        let whatType = (championData.filter((c) => c.id == name))[0].tags[0];
+        let whatType = (championData.filter((c) => c.id === name))[0].tags[0];
 
-        if(whatType=="Assassin"){setnum(0)}
-        else if(whatType=="Fighter"){setnum(1)}
-        else if(whatType=="Mage"){setnum(2)}
-        else if(whatType=="Marksman"){setnum(3)}
-        else if(whatType=="Support"){setnum(4)}
-        else if(whatType=="Tank"){setnum(5)}
+        if(whatType==="Assassin"){setnum(0)}
+        else if(whatType==="Fighter"){setnum(1)}
+        else if(whatType==="Mage"){setnum(2)}
+        else if(whatType==="Marksman"){setnum(3)}
+        else if(whatType==="Support"){setnum(4)}
+        else if(whatType==="Tank"){setnum(5)}
 
         setChamp(name);
         navigate("/sub/Champ");
     }
+
     // 배열의 최빈값 구하기
     function getMode(array) {
         const counts = array.reduce((pv, cv) => {
             pv[cv] = (pv[cv] || 0) + 1;
             return pv;
-        }, {});
-
+        }, []);
+        
         const keys = Object.keys(counts);
+        const Ob = Object.entries(counts);
         if (keys[0] == "") { return keys[1] }
         else {
             return keys[0]
         }
     }
 
+    // 배열의 최빈값 구하기
+    // function getMode(array) {
+    //     let m = new Map();
+
+    //     array.forEach((key) => {
+    //         m.set(key, (m.get(key) || 0) + 1);
+    //     })
+            
+    //     m = [...m].sort((a, b) => b[1] - a[1]);
+        
+    //     if (m.length !== 0) {
+    //         if (m[0][0]=="") {
+    //             return m[1][0]
+    //         } else {
+    //             return (m.length === 1 || m[0][1] > m[1][1] ? m[0][0] : -1)
+    //         }
+    //     }
+    // }
+    
     useEffect(() => {
         window.scrollTo(0, 0);
         axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?api_key=${APIKEY}`)
@@ -111,11 +126,9 @@ function Search() {
                                     tempAssist += (matchInfo.participants).filter((m) => m.puuid == userData.puuid)[0].assists;
 
                                     let myPlayer = (matchInfo.participants).filter((m) => m.puuid == userData.puuid);
-                                    (matchInfo.participants).forEach((map) => {
-                                        myPlayer.forEach((myp) => {
-                                            if (myp.win == map.win) {
-                                                tempteamKills += map.kills;
-                                            }
+                                    (matchInfo.participants).forEach((matchInfo) => {
+                                        myPlayer.forEach((myPlayer) => {
+                                            (myPlayer.win === matchInfo.win) && (tempteamKills += matchInfo.kills)
                                         })
                                     })
 
@@ -136,9 +149,12 @@ function Search() {
                 
                 const setFreeR = (arr) => {
                     setFree({
-                        tier: arr.tier,rank: arr.rank,
-                        LP: arr.leaguePoints, win: arr.wins,
-                        lose: arr.losses, rate: (arr.wins / (arr.wins + arr.losses) * 100).toFixed(1)
+                        tier: arr.tier,
+                        rank: arr.rank,
+                        LP: arr.leaguePoints,
+                        win: arr.wins,
+                        lose: arr.losses,
+                        rate: (arr.wins / (arr.wins + arr.losses) * 100).toFixed(1)
                     })
                 }
 
@@ -158,27 +174,20 @@ function Search() {
                     .then((r) => {
                         const Rankdata = r.data;
 
-                        if(Rankdata.length === 0 ) {
-                            Solo0();
-                            Free0();
-                        }else {
+                        if (Rankdata.length === 0) { Solo0(); Free0(); }
+                        else {
                             if (Rankdata[0].queueType === "RANKED_FLEX_SR") {
                                 setFreeR(Rankdata[0]);
                                 Solo0();
                             } else if (Rankdata[0]?.queueType === "RANKED_SOLO_5x5") {
                                 setSoloR(Rankdata[0]);
-                                if (Rankdata[1]?.queueType === "RANKED_FLEX_SR") {
-                                    setFreeR(Rankdata[1]);
-                                }else{ Free0() }
-                            } else if (Rankdata[0].queueType === "RANKED_TFT_DOUBLE_UP" && Rankdata[1].queueType === "RANKED_SOLO_5x5") {
-                                setSoloR(Rankdata[1]);
-                                if (Rankdata[2].queueType === "RANKED_FLEX_SR") {
-                                    setFreeR(Rankdata[2]);
-                                }else{ Free0() }
-                                Free0();
+                                Rankdata[1]?.queueType === "RANKED_FLEX_SR" ? setFreeR(Rankdata[1]) : Free0();
                             } else if (Rankdata[0].queueType === "RANKED_TFT_DOUBLE_UP" && Rankdata[1].queueType === "RANKED_FLEX_SR") {
                                 setFreeR(Rankdata[1]);
                                 Solo0();
+                            } else{
+                                setSoloR(Rankdata[1]);
+                                Rankdata[2].queueType === "RANKED_FLEX_SR" ? setFreeR(Rankdata[2]) : Free0();
                             }
                         }
                     });
@@ -195,8 +204,8 @@ function Search() {
                             tempChamp.push(champ[i])
                         }
                         setTChamp(tempChamp);
-                    })
-            }).catch(error => console.log("소환사명을 정확히 입력해 주세요!"));
+                    });
+            }).catch(error => console.log("소환사명을 정확히 입력해 주세요!"))
     }, [user])
     
 return (
@@ -213,7 +222,7 @@ return (
                     <CircularProgressBar percent={Math.ceil(tWin / (tWin + tLose) * 100)} colorSlice="#5383E8" colorCircle="#E84057" fontSize='1rem' size={130} speed={100} stroke={16} />
                     <div>
                         <p className="recentWL"> {tWin}승 {tLose}패</p>
-                        <p className="recentKD"> {(tK/MatchNum).toFixed(1)} / {(tD/MatchNum).toFixed(1)} / {(tAs/MatchNum).toFixed(1)} </p>
+                        <p className="recentKD"> {(tK/MatchNum).toFixed(1)} / <span>{(tD/MatchNum).toFixed(1)}</span> / {(tAs/MatchNum).toFixed(1)} </p>
                         <p className="recentKDP"> {tD !== 0 ? ((tK + tAs) / tD).toFixed(2) : 1} : 1 </p>
                         <p className="recentKDV"> 킬관여 : {teamKill !== 0 ? ((tK + tAs) / teamKill * 100).toFixed(1) : 0}%</p>
                     </div>

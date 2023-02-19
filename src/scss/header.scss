@@ -50,10 +50,6 @@ header{
                     margin: 0 auto;
                     cursor: pointer;
                 
-                    &:hover {
-                        box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
-                    }
-                
                     &:active, &.active {
                         width: 105px;
                         height: 45px;

@@ -243,62 +243,50 @@ $color-red: rgb(240, 125, 141);
             }
 
             .popup{
-                position: absolute;
-                top: 0%;
-                left: 0%;
                 width: 100%;
                 height: 100%;
-                background-color: #ffffffe9;
-                border-radius: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 25px;
+                background-color: rgba(255, 255, 255, 0.9);
                 span{
                     position: absolute;
-                    top: 500px;
+                    top: 32%;
                     left: 50%;
-                    font-size: 35px;
-                    cursor: pointer;
-                    transition: 0.5s;
+                    font-size: 55px;
                     &:nth-child(3){
-                        transform: translateX(240px);
+                        transform: translateX(225px) translateY(160px);
                     }
                     &:nth-child(2){
-                        transform: translateX(-270px);
-                    }
-                    &:hover{
-                        color: #f07d8d;
+                        transform: translateX(-280px) translateY(160px);
                     }
                 }
                 img{
                     position: absolute;
-                    top: 320px;
+                    top: 31%;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 400px;
                     height: 400px;
                     border-radius: 10px;
                 }
+                p{
+                    position: absolute;
+                    font-size: 20px;
+                    top: 32%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(420px);
+                }
                 button{
                     position: absolute;
-                    top: 260px;
+                    top: 32%;
                     left: 50%;
                     border: none;
                     background-color: transparent;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) translateY(-80px);
                     color: rgb(0, 0, 0);
                     font-size: 40px;
-                    z-index: 10;
-                    cursor: pointer;
-                    transition: 0.4s;
-                    &:hover{
-                        color: #f07d8d;
-                    }
-                }
-
-                p{
-                    position: absolute;
-                    top: 730px;
-                    left: 50%;
-                    font-size: 18px;
-                    transform: translateX(-50%);
                 }
             }
         }
@@ -532,8 +520,8 @@ $color-red: rgb(240, 125, 141);
         flex-wrap: wrap;
         padding: 20px;
         li{
-            padding: 2px 15px;
-            margin: 5px 6px;
+            padding: 2px 14px;
+            margin: 4px 4px;
             height: 35px;
             display: flex;
             align-items: center;
@@ -579,40 +567,69 @@ $min : 240px;
         }
     }
 
-    .Info .champInfo .mainInfo figure figcaption{
-        &.active{
-            margin: 0;
+    .Info .champInfo .mainInfo {
+
+        figure figcaption{
+            &.active{
+                margin: 0;
+            }
+        }
+        
+        .popup{
+            span{
+                position: absolute;
+                top: 32%;
+                left: 50%;
+                font-size: 55px;
+                &:nth-child(3){
+                    transform: translateX(225px) translateY(160px);
+                }
+                &:nth-child(2){
+                    transform: translateX(-280px) translateY(160px);
+                }
+            }
+            img{
+                position: absolute;
+                top: 31%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 400px;
+                height: 400px;
+                border-radius: 10px;
+            }
+            p{
+                position: absolute;
+                font-size: 20px;
+                top: 32%;
+                left: 50%;
+                transform: translateX(-50%) translateY(420px);
+            }
+            button{
+                position: absolute;
+                top: 32%;
+                left: 50%;
+                border: none;
+                background-color: transparent;
+                transform: translateX(-50%) translateY(-80px);
+                color: rgb(0, 0, 0);
+                font-size: 40px;
+            }
         }
     }
 }
-
 
 @include device($mobile2,$mobile){
 
     .selectChamp{
         margin: 180px auto 0;
         .typeChamp{
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            padding: 1.4vw;
+            flex-wrap: wrap;
             border-bottom: 1px solid #5e5e5e;
             li{
-                width: auto;
-                padding: 0 10px;
+                width: 26%;
+                line-height: 40px;
                 &.active{
-                    background-color: $color-red;
-                    color: white;
-                    &:hover{
-                        color: white;  
-                    }
-
-                }
-                &:hover{
-                    font-size: 17px;
-                    border: 1px $color-red solid;  
-                    color: $color-red;
+                    border: none;
                 }
             }
         }
@@ -747,19 +764,19 @@ $min : 240px;
             .popup{
                 span{
                     position: absolute;
-                    top: 420px;
+                    top: 35%;
                     left: 50%;
-                    font-size: 35px;
+                    font-size: 55px;
                     &:nth-child(3){
-                        transform: translateX(180px);
+                        transform: translateX(165px) translateY(140px);
                     }
                     &:nth-child(2){
-                        transform: translateX(-210px);
+                        transform: translateX(-220px) translateY(140px);
                     }
                 }
                 img{
                     position: absolute;
-                    top: 280px;
+                    top: 35%;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 330px;
@@ -768,17 +785,17 @@ $min : 240px;
                 }
                 p{
                     position: absolute;
-                    top: 630px;
+                    top: 35%;
                     left: 50%;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) translateY(350px);
                 }
                 button{
                     position: absolute;
-                    top: 200px;
+                    top: 35%;
                     left: 50%;
                     border: none;
                     background-color: transparent;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) translateY(-60px);
                     color: rgb(0, 0, 0);
                     font-size: 40px;
                 }
@@ -1040,9 +1057,9 @@ $min : 240px;
             .popup{
                 span{
                     position: absolute;
-                    top: 660px;
+                    top: 35%;
                     left: 50%;
-                    font-size: 35px;
+                    font-size: 70px;
                     z-index: 10;
                     color: rgb(197, 197, 197);
                     transition: 0.5s;
@@ -1050,15 +1067,15 @@ $min : 240px;
                         color: $color-red;
                     }
                     &:nth-child(3){
-                        transform: translateX(120px);
+                        transform: translateX(95px) translateY(120px);
                     }
                     &:nth-child(2){
-                        transform: translateX(-153px);
+                        transform: translateX(-160px) translateY(120px);
                     }
                 }
                 img{
                     position: absolute;
-                    top: 520px;
+                    top: 35%;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 310px;
@@ -1067,17 +1084,17 @@ $min : 240px;
                 }
                 p{
                     position: absolute;
-                    top: 850px;
+                    top: 35%;
                     left: 50%;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) translateY(330px);
                 }
                 button{
                     position: absolute;
-                    top: 450px;
+                    top: 35%;
                     left: 50%;
                     border: none;
                     background-color: transparent;
-                    transform: translateX(-50%);
+                    transform: translateX(-50%) translateY(-60px);
                     color: rgb(0, 0, 0);
                     font-size: 40px;
                 }
@@ -1114,7 +1131,7 @@ $min : 240px;
                 h4{
                     padding-top: 13px;
                     padding-left: 90px;
-                    margin-bottom: 70px;
+                    margin-bottom: 60px;
                     &::after{
                         bottom: -45px;
                     }
@@ -1140,7 +1157,14 @@ $min : 240px;
                     }
                 }
             }
-
+            .passive{
+                h4{
+                    margin-bottom: 50px;
+                    &::after{
+                        bottom: -35px;
+                    }
+                }
+            }
         }
 
         .tips{

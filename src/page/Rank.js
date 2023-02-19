@@ -13,21 +13,23 @@ function Rank() {
   useEffect(() => {AOS.init();})
 
   const { setUser, APIKEY } = useContext(whatSearch);
-  const [whatleauge, setWl] = useState("challengerleagues");
-  const [whatleauge2, setWl2] = useState("");
+  const [whatleauge, setWhatleague] = useState("challengerleagues");
+  const [whatleauge2, setWhatleague2] = useState("");
+  const [leagueNum, setleagueNum] = useState("");
+
   const [whatDivi, setwhatDivi] = useState("I");
-  const onDivision = useRef();
+  const [divisionNum, setdivisionNum] = useState(0);
+
   const [ranker, setRanker] = useState([]);
   const navigate = useNavigate();
-  const divi = useRef([]);
-  const league = useRef([]);
+  
   const isMounted = useRef(false);
   const isMounted2 = useRef(false);
 
-  useEffect(() => {
-    league.current[0].classList.add("active");
-  }, [])
+  const leaguesArr = [["challengerleagues", "챌린저"], ["grandmasterleagues", "그랜드 마스터"], ["masterleagues", "마스터"], ["DIAMOND", "다이아"], ["PLATINUM", "플래티넘"], ["GOLD", "골드"], ["SILVER", "실버"], ["BRONZE", "브론즈"]];
   
+  const divisionArr = ["I", "II", "III", "IV"];
+
   useEffect(() => {
       axios.get(`https://kr.api.riotgames.com/lol/league/v4/${whatleauge}/by-queue/RANKED_SOLO_5x5?api_key=${APIKEY}`)
         .then((m) => {
@@ -66,53 +68,47 @@ function Rank() {
     navigate("/sub/Search");
   }
 
-  const fetch1 = (e) => {
-    onDivision.current.classList.remove("active");
-    setWl(e.target.className);
-    
-    league.current.forEach(l => l.classList.remove("active"))
-    e.target.classList.add("active");
+  const fetch1 = (e,key) => {
+    setWhatleague(e.target.id);
+    setdivisionNum(-1);
+    setleagueNum(key);
   }
 
-  const fetch2 = (e) => {
-    onDivision.current.classList.add("active");
-    setWl2(e.target.className);
+  const fetch2 = (e,key) => {
+    setWhatleague2(e.target.id);
     setwhatDivi("I");
-    divi.current.forEach(d => d.classList.remove("active") )
-    divi.current[0].classList.add("active");
-
-    league.current.forEach(l => l.classList.remove("active"))
-    e.target.classList.add("active");
+    setdivisionNum(0);
+    setleagueNum(key);
   }
 
-  const fetch3 = (e) => {
-    setwhatDivi(e.target.className);
-    divi.current.forEach(d => d.classList.remove("active") )
-    e.target.classList.add("active");
+  const fetch3 = (e,num) => {
+    setwhatDivi(e.target.id);
+    setdivisionNum(num);
   }
-
-  const leaguesArr = [["challengerleagues", "챌린저"], ["grandmasterleagues", "그랜드 마스터"], ["masterleagues", "마스터"], ["DIAMOND", "다이아"], ["PLATINUM", "플래티넘"], ["GOLD", "골드"], ["SILVER", "실버"], ["BRONZE", "브론즈"]];
-    
-  const divisionArr = ["I", "II", "III", "IV"];
 
   return (
     <>      
       <TopHead num={0} />
       <main className="Ranking animate__animated animate__fadeIn">
+
         <h2>유저 랭킹</h2>
+
         <ul className="leagues">
           {
-            leaguesArr.map((l,key)=>{
+            leaguesArr.map((league,key)=>{
               return key < 3
-                ? <li key={key} className={l[0]} onClick={(e) => { fetch1(e) }} ref={e => league.current[key] = e}>{l[1]}</li>
-                :  <li key={key} className={l[0]} onClick={(e) => { fetch2(e) }} ref={e => league.current[key] = e}>{l[1]}</li>
+                ? <li key={key} id={league[0]} className={(key === leagueNum) ? "active" : ""}  onClick={(e) => { fetch1(e,key) }} > {league[1]} </li>
+                : <li key={key} id={league[0]} className={(key === leagueNum) ? "active" : ""}  onClick={(e) => { fetch2(e,key) }} > {league[1]} </li>
             })
           }
         </ul>
-        <ul className="division" ref={onDivision}>
+
+        <ul className={ (divisionNum === -1) ? "division" : "division active"}>
           {
-            divisionArr.map((d,key)=>{
-              return <li key={key} className={d} onClick={(e) => { fetch3(e) }} ref={e => divi.current[key] = e}>{d}</li>
+            divisionArr.map((division, key) => {
+              return  <li key={key} className={(key === divisionNum) ? "active" : ""} id={division} onClick={(e) => { fetch3(e, key) }}>
+                        {division}
+                      </li>
             })
           }
         </ul>

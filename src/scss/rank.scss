@@ -77,7 +77,7 @@ $color-bg: rgba(243, 244, 243, 0.8);
     
     .division{
         display: flex;
-        opacity: 0;
+        opacity: 1;
         transform: scaleY(0);
         justify-content: center;
         margin: 40px 50px;
@@ -157,7 +157,7 @@ $color-bg: rgba(243, 244, 243, 0.8);
             }
             &:nth-child(2) {
                 .rank{
-                    background-position:-6.5px -33px;
+                    background-position:-8.5px -33px;
                 }
                 .rankerName{
                     color:  rgb(221, 158, 0);
@@ -165,7 +165,7 @@ $color-bg: rgba(243, 244, 243, 0.8);
             }   
             &:nth-child(3) {
                 .rank{
-                    background-position: -45.5px -33px;
+                    background-position: -46.5px -33px;
                 }
                 .rankerName{
                     color: rgb(164, 164, 164);
@@ -173,7 +173,7 @@ $color-bg: rgba(243, 244, 243, 0.8);
             }   
             &:nth-child(4) {
                 .rank{
-                    background-position:-83px -33px;
+                    background-position:-84.5px -33px;
                 }
                 .rankerName{
                     color: rgb(149, 82, 82);
@@ -377,17 +377,17 @@ $min : 240px;
                 }
                 &:nth-child(2) {
                     .rank{
-                        background-position:0px -19px;
+                        background-position:1.5px -19px;
                     }
                 }   
                 &:nth-child(3) {
                     .rank{
-                        background-position:-25px -19px;
+                        background-position:-23px -19px;
                     }
                 }   
                 &:nth-child(4) {
                     .rank{
-                        background-position:-49px -19px;
+                        background-position:-48px -19px;
                     }
                 }   
                 

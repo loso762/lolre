@@ -458,7 +458,7 @@ $transp: rgb(255, 255, 255,0);
                                     position: absolute;
                                     bottom: -25px;
                                     left: 0;
-                                    background: rgb(159, 159, 159);
+                                    background: rgb(116, 116, 116);
                                 }
                             }
                         }
@@ -1079,16 +1079,11 @@ $min : 240px;
         margin-top: 190px;
 
         .info0{
-            display: flex;
-            flex-wrap: wrap;
             padding: 10px 10px;
             height: 390px;
             .userMainInfo{
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 100%;
-                height: 160px;
+                height: 140px;
                 padding-left: 0;
                 transform: translateY(-15px);
                 div{
@@ -1124,6 +1119,7 @@ $min : 240px;
                     width: 35%;
                     display: flex;
                     flex-direction: column;
+                    padding-left: 5px;
                     p{
                         text-align: left;
                         font-size: calc(10px + 1vw);
@@ -1134,82 +1130,21 @@ $min : 240px;
             
             .likePosition{
                 width: 100%;
-                display:flex;
-                flex-direction: column;
                 height: 130px;
-                position: relative;
                 padding-top: 10px;
                 margin-top: 45px;
                 h4{
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
                     font-size: calc(10px + 1vw);
-                    transform: translateY(-140%) translateX(-50%);
                 }
                 ul{
                     width: 100%;
-                    display: flex;
-                    justify-content:space-around;
                     margin-top: 10px;
-                    height: 100%;
                     li{
-                        width: 20px;
-                        height: 90%;
-                        position: relative;
-                        background-color: rgb(137, 137, 137);  
-                        transition: 0.5s;
+                        height: 85%;
                         p{
-                            position: absolute;
                             bottom: -90%;
-                            left: 0%;
-                            width: 65px;
-                            height: 22px;
-                            line-height: 22px;
-                            text-align: center;
-                            border-radius: 5px;
-                            padding: 0px 5px;
-                            background-color: #4d4d4d;
-                            display: none;
-                            color: white;
-                            transform: translateX(-32%);
-                            font-size: 13px;
-                            opacity: 0.7;
-                            &::after {
-                                border-bottom: 5px solid #2d2d2d;
-                                border-left: 5px solid $transp;
-                                border-right: 5px solid $transp;
-                                border-top: 0px solid $transp;
-                                content: "";
-                                position: absolute;
-                                top: 0;
-                                left: 50%;
-                                transform: translateX(-60%) translateY(-100%);
-                            }
-                        }
-    
-                        span{
-                            display: block;
-                            width: 100%;
-                            height: 50%;
-                            background-color: #5383E8;
-                            position: absolute;
-                            bottom: 0;
-                            border: none;
-                            transition: 1s;
-                        }
-                        &:hover{
-                            p{
-                                display: block;
-                            }
                         }
                     }
-                }
-                .svg{
-                    transform: translateY(0px);
-                    display: flex;
-                    justify-content:space-around;
-                    width: 100%;
                 }
             }
         }
@@ -1289,41 +1224,14 @@ $min : 240px;
                 width: 100%;
                 height: 400px;
                 padding: 30px 20px;
-                text-align: center;
                 font-size: 22px;
-                border-radius: 25px;
-                color: rgb(50, 50, 50);
-                position: relative;
                 margin-top: 50px;
-                background-color: $color-bg;
-                transition: 1s;
-                
-                h3{
-                    font-size: 23px;
-                    text-align: center;
-                    margin: 5px 0 30px ;
-                }
                 
                 li{
-                    text-align: left;
-                    height: 43px;
                     margin: 16px 5px;
-                    display: flex;
-                    align-items: center;
                     font-size: 14px;
-                    color: rgb(50, 50, 50);
-                    position: relative;
                     z-index: 2;
-                    cursor: pointer;
 
-                    &:hover{
-                        img{
-                            transform: scale(1.1);
-                        }
-                        h4{
-                            color: #5383E8;
-                        }
-                    }
                     img{
                         width: 40px; height: 40px;
                         border-radius: 100%;
@@ -1347,6 +1255,7 @@ $min : 240px;
                 .top{
                     width: 100%;
                     display: flex;
+                    justify-content: right;
                     margin: 10px 0 30px;
                     z-index: 10;
                     p{
@@ -1354,7 +1263,7 @@ $min : 240px;
                         font-size: 14px;
                         font-weight: bold;
                         &:nth-child(1){
-                            width: 40%;
+                            width: calc(28% + 9vw);
                         }
                         &:nth-child(2){
                             width: 30%;
