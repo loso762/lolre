@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef , useContext, useState , useEffect } from "react";
 import { Link , useNavigate } from "react-router-dom";
-import { whatSearch } from "../context/whatSearch";
+import { LolContext } from "../store/lol-context";
 
 function TopHead({ num }) {
   const TH = useRef();
@@ -10,7 +10,7 @@ function TopHead({ num }) {
   const SearchName2 = useRef();
   const menulist = useRef([]);
   const [Slist, setSlist] = useState(false);
-  let { setUser, users, setUsers } = useContext(whatSearch);
+  let { setUser, users, setUsers } = useContext(LolContext);
   let menu = ["Rank", "Search", "Champ"];
 
   const clickbtn = () => {

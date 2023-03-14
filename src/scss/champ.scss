@@ -250,6 +250,7 @@ $color-red: rgb(240, 125, 141);
                 left: 0;
                 border-radius: 25px;
                 background-color: rgba(255, 255, 255, 0.9);
+                z-index: 9;
                 span{
                     position: absolute;
                     top: 32%;
@@ -270,6 +271,7 @@ $color-red: rgb(240, 125, 141);
                     width: 400px;
                     height: 400px;
                     border-radius: 10px;
+                    z-index: 10;
                 }
                 p{
                     position: absolute;
@@ -287,6 +289,7 @@ $color-red: rgb(240, 125, 141);
                     transform: translateX(-50%) translateY(-80px);
                     color: rgb(0, 0, 0);
                     font-size: 40px;
+                    z-index: 10;
                 }
             }
         }

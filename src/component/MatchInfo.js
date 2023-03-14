@@ -1,15 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
 import RuneSpell from "./RuneSpell";
-import itemData from "../json/item.json"
-import AOS from "aos";
+import itemData from "../json/item.json";
 import "aos/dist/aos.css";
 
 
 const MatchInfo = ({ matchInfo, searchplayer,champClick }) => {
-    useEffect(() => {
-        AOS.init();
-    })
+
     searchplayer.sort(function (a, b) { return b.time - a.time });
     matchInfo.sort(function (a, b) { return b.gameEndTimestamp - a.gameEndTimestamp });
 
@@ -19,7 +15,7 @@ const MatchInfo = ({ matchInfo, searchplayer,champClick }) => {
         t.participants.filter((p) => p.win == searchplayer[key].p[0].win).forEach(mm => {
             totalkill += (mm.kills)
         });
-        return totalkill==0 ? 0 : ((searchplayer[key].p[0].kills + searchplayer[key].p[0].assists) / totalkill * 100).toFixed(0) ;
+        return totalkill === 0 ? 0 : ((searchplayer[key].p[0].kills + searchplayer[key].p[0].assists) / totalkill * 100).toFixed(0) ;
     }
 
     //사용 아이템
@@ -92,9 +88,9 @@ const MatchInfo = ({ matchInfo, searchplayer,champClick }) => {
                                     <p>KD : {kills} / <span>{deaths}</span> / {assists} </p>
                                     <p>킬 관여 : {KDV(matchInfo, key)}%</p>
                                     {
-                                        deaths == 0 ?
-                                            <p>평점 : {kills + assists} </p> :
-                                            <p>평점 : {((kills + assists) / deaths).toFixed(1)} : 1</p> 
+                                        deaths === 0 
+                                        ? <p>평점 : {kills + assists} </p>
+                                        : <p>평점 : {((kills + assists) / deaths).toFixed(1)} : 1</p> 
                                     }
                                 </li>
                                 <li className="myItem">

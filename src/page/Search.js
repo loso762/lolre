@@ -1,7 +1,7 @@
 import '../scss/search.scss';
-import { useRef , useContext , useEffect , useState} from "react";
+import { useRef , useContext , useEffect , useState, useCallback} from "react";
 import { useNavigate  } from "react-router-dom";
-import { whatSearch } from "../context/whatSearch";
+import { LolContext } from "../store/lol-context";
 import axios from 'axios';
 import championData from "../json/champion.json"
 import RankInfo from '../component/RankInfo';  
@@ -13,9 +13,9 @@ import { CircularProgressBar } from '@tomik23/react-circular-progress-bar'
 
 function Search() {
     const navigate = useNavigate();
-    const { user, APIKEY, setChamp, setnum } = useContext(whatSearch);
+    const { user, APIKEY, setChamp, setnum } = useContext(LolContext);
     //검색 경기 수
-    const MatchNum = 8;
+    const MatchNum = 10;
     
     const [Searchid, setsearchId] = useState("");
     const puuid = useRef("");
@@ -62,39 +62,19 @@ function Search() {
     }
 
     // 배열의 최빈값 구하기
-    function getMode(array) {
+    const getMode = (array) => {
         const counts = array.reduce((pv, cv) => {
             pv[cv] = (pv[cv] || 0) + 1;
             return pv;
         }, []);
         
         const keys = Object.keys(counts);
-        const Ob = Object.entries(counts);
         if (keys[0] == "") { return keys[1] }
         else {
             return keys[0]
         }
     }
 
-    // 배열의 최빈값 구하기
-    // function getMode(array) {
-    //     let m = new Map();
-
-    //     array.forEach((key) => {
-    //         m.set(key, (m.get(key) || 0) + 1);
-    //     })
-            
-    //     m = [...m].sort((a, b) => b[1] - a[1]);
-        
-    //     if (m.length !== 0) {
-    //         if (m[0][0]=="") {
-    //             return m[1][0]
-    //         } else {
-    //             return (m.length === 1 || m[0][1] > m[1][1] ? m[0][0] : -1)
-    //         }
-    //     }
-    // }
-    
     useEffect(() => {
         window.scrollTo(0, 0);
         axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?api_key=${APIKEY}`)

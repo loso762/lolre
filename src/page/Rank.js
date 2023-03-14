@@ -2,7 +2,7 @@ import React from "react";
 import '../scss/rank.scss';
 import axios from 'axios';
 import { useContext , useEffect , useState , useRef } from "react";
-import { whatSearch } from "../context/whatSearch";
+import { LolContext } from "../store/lol-context";
 import { useNavigate  } from "react-router-dom";
 import TopHead from '../component/TopHead';
 import AOS from "aos";
@@ -12,13 +12,13 @@ function Rank() {
 
   useEffect(() => {AOS.init();})
 
-  const { setUser, APIKEY } = useContext(whatSearch);
+  const { setUser, APIKEY } = useContext(LolContext);
   const [whatleauge, setWhatleague] = useState("challengerleagues");
   const [whatleauge2, setWhatleague2] = useState("");
   const [leagueNum, setleagueNum] = useState("");
 
   const [whatDivi, setwhatDivi] = useState("I");
-  const [divisionNum, setdivisionNum] = useState(0);
+  const [divisionNum, setdivisionNum] = useState(-1);
 
   const [ranker, setRanker] = useState([]);
   const navigate = useNavigate();

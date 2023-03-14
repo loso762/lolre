@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useRef, useState,useReducer } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import '../scss/champ.scss';
 import TopHeadChamp from '../component/TopHeadChamp';
-import { whatSearch } from "../context/whatSearch";
+import { LolContext } from "../store/lol-context";
 import championData from "../json/champion.json"
 import axios from 'axios';
 import '../scss/champ.scss'
@@ -9,77 +9,80 @@ import '../scss/champ.scss'
 
 function Champ() {
 
-  const { champ, setChamp, num, setnum } = useContext(whatSearch);
+  const { champ, setChamp, num, setnum } = useContext(LolContext);
   const [champInfo, setChampInfo] = useState();
+
   const [skinNum, setskinNum] = useState(0);
   const [skinKey, setskinKey] = useState(0);
   const [skinName, setskinName] = useState("");
-  const [onskins, setonskins] = useState(false);
-  const skin = useRef();
-  const skinImg = useRef();
-  const skinP = useRef();
-  const wL = useRef([]);
-  const [ctype, setCtype] = useState([]);
-  const tempDiv = ["Q","W","E","R"];
-  const ChampionType = [{ e: "Assassin", k: "암살자" }, { e: "Fighter", k: "전사" }, { e: "Mage", k: "마법사" }, { e: "Marksman", k: "원거리딜러" }, { e: "Support", k: "서포터" }, { e: "Tank", k: "탱커" }];
+  const [onskins, setOnskins] = useState(false);
+
+  const champTypeRef = useRef([]);
+  const [clickType, setclickType] = useState([]);
+  const ChampionTypeList = [
+    { en: "Assassin", ko: "암살자" }, { en: "Fighter", ko: "전사" }, { en: "Mage", ko: "마법사" }, { en: "Marksman", ko: "원거리딜러" }, { en: "Support", ko: "서포터" }, { en: "Tank", ko: "탱커" }
+  ];
 
 
   useEffect(() => {
-    wL[num].classList.remove("active");
-
-    let champType = [];
-    champType = championData.filter((c) => wL[num].classList == c.tags[0]);
-    setCtype(champType);
 
     axios.get(`../json/champion/${champ}.json`)
       .then((s) => {
         setChampInfo(s.data.data[champ]);
     })
-    wL[num].classList.add("active");
+
+    champTypeRef[num].classList.remove("active");
+    setclickType(championData.filter((champ) => champTypeRef[num].classList.value === champ.tags[0]));
+    setskinNum(0);
+    setOnskins(false);
+    champTypeRef[num].classList.add("active");
+
   }, [champ])
 
 
   useEffect(() => {
-    skinImg[skinKey] && setskinNum(skinImg[skinKey].id);
-    skinImg[skinKey] && setskinName(skinP[skinKey].id);
+    setskinNum(champInfo?.skins[skinKey].num);
+    setskinName(champInfo?.skins[skinKey].name);
   },[skinKey])
 
   const clickList = (type,key) => {
-    let champType = [];
-    champType = championData.filter((c) => type == c.tags[0]);
-    setChamp(champType[0].id);
-    wL[num].classList.remove("active");
+    
+    //챔피언 타입 클릭하면 그 타입의 첫번째 챔피언 불러오기
+    setChamp((championData.filter((c) => type === c.tags[0]))[0].id);
+    champTypeRef[num].classList.remove("active");
+
     setnum(key);
+
     setskinNum(0);
-    setonskins(false);
+    setOnskins(false);
   }
 
   const clickChamp = (e, id) => {
     e.stopPropagation();
     setChamp(id);
-    setskinNum(0);
-    setonskins(false);
+  }
+
+  const onSkinClick  = (champ,idx)=>{
+    setskinNum(champ.num); 
+    setskinName(champ.name); 
+    setskinKey(idx);
   }
 
   return (
     <>
-      <TopHeadChamp setnum={setnum} setCtype={setCtype} wL={wL} num={num} />
+      <TopHeadChamp setnum={setnum} setclickType={setclickType} num={num} champTypeRef={champTypeRef}/>
       <section className="selectChamp">
         <ul className="typeChamp animate__animated animate__fadeIn">
           {
-            ChampionType.map((type, idx) => {
-              return (
-                <li className={type.e} onClick={() => clickList(type.e, idx)} ref={e => wL[idx] = e} key={idx} >{type.k}</li>
-                )                
+            ChampionTypeList.map((type, idx) => {
+              return <li className={type.en} onClick={() => clickList(type.en, idx)} ref={e => champTypeRef[idx] = e} key={idx} >{type.ko}</li>     
             })
           }
         </ul>
         <ul className="champList animate__animated animate__fadeIn">
           {
-            ctype.map((c,key) => {
-              return champ == c.id ?
-                <li key={key} className="active" onClick={(e) => clickChamp(e, c.id)}>{c.name}</li>
-                : <li key={key} onClick={(e) => clickChamp(e, c.id)}>{c.name}</li>
+            clickType.map((c,key) => {
+              return <li key={key} className={ champ === c.id ? "active" : ""} onClick={(e) => clickChamp(e, c.id)}>{c.name}</li>
             })
           }
         </ul>
@@ -97,22 +100,21 @@ function Champ() {
                 <article className="mainInfo">
                   
                   <figure>
-                    <img src={`../img/champ2/${champInfo.id}_0.jpg`} alt="" onClick={() => setonskins(!onskins)} />
+                    <img src={`../img/champ2/${champInfo.id}_0.jpg`} alt="" onClick={() => setOnskins(!onskins)} />
                     <p className="name">{champInfo.name}, {champInfo.title}</p> 
-                    <div className={onskins ? "skins active" : "skins"} ref={skin}>
-                      <a href="https://www.youtube.com/channel/UCCMQyaKDjQJY79VimTdaYYQ" target="_blank" className="ULink">관련 유튜브</a>
+                    <div className={onskins ? "skins active" : "skins"}>
+                      <a href="https://www.youtube.com/channel/UCCMQyaKDjQJY79VimTdaYYQ" target="_blank" className="ULink" rel="noreferrer">관련 유튜브</a>
                       {
                         (champInfo.skins).map((c, key) => {
-                          if (c.num != 0) {
+                          if (c.num !== 0) {
                             return (
                               <div key={key}>
                                 <img
                                   id={c.num}
-                                  ref={ e => skinImg[key]=e }
                                   src={`../img/champ2/${champInfo.id}_${c.num}.jpg`} alt=""
-                                  onClick={() => { setskinNum(c.num); setskinName(c.name); setskinKey(key) }}
+                                  onClick={() => { onSkinClick(c,key) }}
                                 />
-                                <p ref={e => skinP[key] = e} id={c.name}>{c.name}</p>
+                                <p id={c.name}>{c.name}</p>
                               </div>
                             )
                           }
@@ -120,10 +122,28 @@ function Champ() {
                       }
                     </div>
                     <figcaption className={onskins ? "active" : ""}>{champInfo.blurb}</figcaption>
-                    {
-                      onskins ? <span>스킨접기</span> : <span>스킨보기</span> 
-                    }
+                    <span> { onskins ? "스킨접기" : "스킨보기" } </span>
                   </figure>
+
+                  {
+                  skinNum > 0 && (
+                    <div className="popup">
+                      <button onClick={() => setskinNum(0)}>✖️</button>
+                      
+                      <span
+                        className="left material-symbols-outlined"
+                        onClick={() => { skinKey > 1 && setskinKey(skinKey - 1)}}
+                      >chevron_left</span>
+                      
+                      <span
+                        className="right material-symbols-outlined"
+                        onClick={() => { skinKey < champInfo.skins.length - 1 && setskinKey(skinKey + 1) }}
+                      >chevron_right</span>
+                        
+                      <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
+                      <p>{skinName}</p>
+                    </div>
+                  )}
 
                   <p className="type">타입 : {champInfo.partype}</p>
 
@@ -131,36 +151,15 @@ function Champ() {
                     <figure>                      
                       <p>주역할군</p>
                       <img src={`../img/role/${champInfo.tags[0]}.png`} alt="" title={`${champInfo.tags[0]}`} />
-                      <figcaption>{(ChampionType.find(c => c.e == [champInfo.tags[0]])).k}</figcaption>
+                      <figcaption>{(ChampionTypeList.find(type => type.en == [champInfo.tags[0]])).ko}</figcaption>
                     </figure>
                     <figure>               
                       <p>부역할군</p>
                       <img src={`../img/role/${champInfo.tags[1]}.png`} alt="" title={`${champInfo.tags[1]}`} />
-                      <figcaption>{(ChampionType.find(c => c.e == [champInfo.tags[1]]))?.k}</figcaption>
+                      <figcaption>{(ChampionTypeList.find(type => type.en == [champInfo.tags[1]]))?.ko}</figcaption>
                     </figure>
                   </div>
 
-
-                  {
-                  skinNum !== 0 ? (<div className="popup">
-                      <button onClick={() => setskinNum(0)}>✖️</button>
-                      
-                      <span
-                        className="left material-symbols-outlined"
-                        onClick={() => { skinKey > 1 ? setskinKey(skinKey - 1) : setskinKey(skinKey) }}
-                      >chevron_left</span>
-                      
-                      <span
-                        className="right material-symbols-outlined"
-                        onClick={() => { skinKey < Object.keys(skinImg).length - 1 ? setskinKey(skinKey + 1) : setskinKey(skinKey) }}
-                      >chevron_right</span>
-                        
-                      <img src={`../img/champ2/${champInfo.id}_${skinNum}.jpg`} alt="" /> 
-                      <p>{skinName}</p>
-                      </div>
-                        )
-                                : <></>
-                  }
                 </article>
                 
               <article className="stats">
@@ -241,10 +240,10 @@ function Champ() {
                     </figure>
                   </div>
                   {
-                    champInfo.spells.map((c,k) => {
+                    champInfo.spells.map((c,idx) => {
                       return (
-                        <div className="spellBox" key = {k} >
-                          <h4>{c.name} ({tempDiv[k]})</h4>
+                        <div className="spellBox" key = {idx} >
+                          <h4>{c.name} ({["Q","W","E","R"][idx]})</h4>
                           <figure>
                             <img src={`../img/spell/${c.image.full}`} alt=""/>
                             <figcaption dangerouslySetInnerHTML={{__html:c.description}}></figcaption>

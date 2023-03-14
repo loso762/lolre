@@ -1,6 +1,6 @@
 import React,{ useRef , useContext, useState, useEffect } from "react";
-import { matchPath, useNavigate  } from "react-router-dom";
-import { whatSearch } from "../context/whatSearch";
+import { useNavigate  } from "react-router-dom";
+import { LolContext } from "../store/lol-context";
 import '../scss/first.scss';
 
 function First() {
@@ -11,7 +11,7 @@ function First() {
     let tempUsers = [];
 
 
-    let {setUser,users,setUsers} = useContext(whatSearch);
+    let {setUser,users,setUsers} = useContext(LolContext);
 
     useEffect(() => {
         const findSearch = JSON.parse(localStorage.getItem("user"));
@@ -34,7 +34,7 @@ function First() {
 
     const deleteList = (e) => {
         const li = e.target.parentElement;
-        setUsers(users.filter((users) => users.id != parseInt(li.id)));
+        setUsers(users.filter((users) => users.id !== parseInt(li.id)));
         savesearch();
     };
 

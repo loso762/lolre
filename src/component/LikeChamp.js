@@ -14,7 +14,6 @@ const LikeChamp = ({ TChamp, championData,champClick }) => {
                             return(
                                 championData.map((cd) => {
                                     if (t.championId == cd.key) {
-
                                         let now = new Date(),
                                             endTime = new Date(t.lastPlayTime),
                                             EndPlay = "";
