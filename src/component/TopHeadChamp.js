@@ -20,13 +20,13 @@ function TopHeadChamp({setclickType, num, setnum, champTypeRef}) {
 
       champTypeRef[num].classList.remove("active");
       
-      if(whatType=="Assassin"){setnum(0)} else if(whatType=="Fighter"){setnum(1)}
-      else if(whatType=="Mage"){setnum(2)} else if(whatType=="Marksman"){setnum(3)}
-      else if(whatType=="Support"){setnum(4)} else if(whatType=="Tank"){setnum(5)}
+      if(whatType==="Assassin"){setnum(0)} else if(whatType==="Fighter"){setnum(1)}
+      else if(whatType==="Mage"){setnum(2)} else if(whatType==="Marksman"){setnum(3)}
+      else if(whatType==="Support"){setnum(4)} else if(whatType==="Tank"){setnum(5)}
 
       let tempType = [];
       championData.forEach((c) => {
-        if (whatType == c.tags[0]) {
+        if (whatType === c.tags[0]) {
           tempType.push(c)
         }
       })
